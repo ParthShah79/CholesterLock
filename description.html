@@ -7,47 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
     <link rel = "stylesheet" href ="styling.css">
     <script src = "app.js" defer></script>
 
     <title>CholesterLock</title>
   </head>
 
-  <!-- Scroll Bar --->
-  <style> 
-  body {
-        height: 600vh;
-  }
-
-  ::-webkit-scrollbar {
-        width: 20px;
-
-  }
-
-  ::-webkit-scrollbar-track {
-      background: rgb(255, 255, 255);
-  }
-
-  ::-webkit-scrollbar-thumb {
-       background: grey;
-  }
-
-  </style>
-
 </div>
 
-    <style>
-    body {
-          background-color: rgb(124, 111, 111);
-    }
-
-    </style>
-
-
-    <nav class = "navbar navbar-expand-sm navbar-light bg-*">
+    <nav class = "navbar navbar-expand-lg navbar-light bg-* fixed-top">
 
       <a 
         href="home.html"
@@ -62,25 +31,33 @@
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navBarNav"
-      class="navbar-toggler"
+      class="navbar-toggler ps-0"
       aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
       >
-        <span class = "navbar-toggler-icon"></span>
+      <span
+        class="d-flex justify-content-start align-items-center navbar-toggler-icon"
+        >
+      <i class="fas fa-bars"></i>
+      </span>
       </button>
+
       <div
-        class="collapse navbar-collapse"
-        id = "navbarNav">
-        <ul class="navbar-nav">
+        class="collapse navbar-collapse navbarcolour"
+        id = "navbarNav" >
+        <ul class="navbar-nav navbar-nav me-auto mb-2 mb-lg-0">
           <li class = "nav-item active">
-            <a href="home.html" class="nav-link active">
-              Home
-            </a>
+          <a class="nav-link active" aria-current="page" href="home.html">
+            Home
+              
+          </a>
           </li>
+
           <li class = "nav-item dropdown">
-            <a href = "#" class = "nav-link dropdown-toggle" 
-            id="navbarDropdown"
+            <a href = "#" class = "nav-link dropdown-toggle nav-link active"
+            rel = "nofollow"
+            target="_blank"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -99,7 +76,7 @@
           </ul>
           
           <li class = "nav-item dropdown">
-            <a href = "#" class = "nav-link dropdown-toggle" 
+            <a href = "#" class = "nav-link dropdown-toggle nav-link active" 
             id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"
@@ -135,7 +112,7 @@
 
        
       <li class = "nav-item dropdown">
-        <a href = "#" class = "nav-link dropdown-toggle" 
+        <a href = "#" class = "nav-link dropdown-toggle nav-link active" 
         id="navbarDropdown"
         role="button"
         data-bs-toggle="dropdown"
@@ -156,14 +133,14 @@
       </li>
 
           <li class = "nav-item">
-            <a href = "#" class = "nav-link">
+            <a href = "#" class = "nav-link nav-link active">
               Safety
             </a>
           </li>
 
         </li>
         <li class = "nav-item">
-          <a href = "#" class = "nav-link">
+          <a href = "#" class = "nav-link nav-link active">
             Human Practices
           </a>
         </li>
@@ -183,14 +160,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
   
-      <div class="progress-bar">
-        <div class="filled"></div>
-      </div>
 
-      <section>Section 1</section> <hr>
-      <section>Section 2</section> <hr>
-      <section>Section 3</section> <hr>
-      <section>Section 4</section> <hr>
+      <div id = "progressbar"></div>
+      <div id = "scrollPath"></div>
+      <div id = "percent"></div>
+
+      <section>
+        <h2>CholesterLock</h2>
+        <p> text here
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        </p>
+      </section>
+
+
+      <script type ="text/javascript">
+        var progressbar = document.getElementById("progressbar");
+        var percent = document.getElementById("percent");
+
+        var totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+          var progress = (window.pageYOffset / totalHeight) * 100;
+          progressbar.style.height = progress + "%";
+        }
+      </script>
+
     
 
   </body>
