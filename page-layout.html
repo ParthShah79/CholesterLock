@@ -5,7 +5,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 		<title>CholesterLock</title>
-        
+    
         <style type="text/css">
           
             * {
@@ -83,6 +83,30 @@
                 display: block;
                 clear: both;
             }
+
+                #progress{
+            height: 70px;
+            width: 70px;
+            background-color: white;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            display: grid;
+            place-items: center;
+        }
+
+        #progress-value{
+            display: block;
+            height: calc(100% - 15px);
+            width: calc(100% - 15px);
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 500;
+        }
     
             #sidebar {
                 min-height: 800px;
@@ -196,12 +220,36 @@
             .license {
                 text-align: center;
             }
-
+        
         </style>
     </head>
    
     <body>
+        <div id="progress">
+            <span id="progress-value"></span>
+        </div>
+
+
+    <script>
+        let scrollPercentage = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollValue = Math.round( pos * 100 / calcHeight);
             
+            scrollProgress.style.background = `linear-gradient(to right, purple ${scrollValue}%, black ${scrollValue}%)`
+            progressValue.textContent = `${scrollValue}%`;
+        }
+
+
+        window.onscroll = scrollPercentage;
+        window.onload = scrollPercentage;
+
+
+    </script>
+
+
         <!--TOP NAVBAR-->
             <nav class="top-nav navbar navbar-expand-lg navbar-dark py-3 fixed-top">
                 <div class="container d-flex align-items-center">
@@ -442,16 +490,12 @@
                 </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+           
             <script src="app.js"></script>
             <script type ="text/javascript">
-                var progressbar = document.getElementById("progressbar");
-                var percent = document.getElementById("percent");
-        
-                var totalHeight = document.body.scrollHeight - window.innerHeight;
-                window.onscroll = function(){
-                var progress = (window.pageYOffset / totalHeight) * 100;
-                progressbar.style.height = progress + "%";
-                }
+            
+
+
             </script>
         </body>
     </html>

@@ -17,236 +17,141 @@
 
 <body>
 
-
-</div>
-
-     <!-- Navigation Bar -->
-    <nav class = "navbar navbar-expand-lg navbar-light fixed-top">
-
-      <a 
-        href="home.html"
-        class="navbar-brand mb-0 h1">
-          <img 
-          class = "d-inline-block align-top"
-          src="images/CholesterLock Logo-white.png"
-          width ="150" height="50" />
-          
-      </a>
-      <button
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navBarNav"
-      class="navbar-toggler ps-0"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      >
-      <span
-        class="d-flex justify-content-start align-items-center navbar-toggler-icon"
-        >
-      <i class="fas fa-bars"></i>
-      </span>
-      </button>
-
-      <div
-        class="collapse navbar-collapse navbarcolour"
-        id = "navbarNav" >
-        <ul class="navbar-nav navbar-nav me-auto mb-2 mb-lg-0">
-          <li class = "nav-item active">
-          <a class="nav-link active" aria-current="page" href="home.html">
-            Home
-              
+<!--TOP NAVBAR-->
+<nav class="top-nav navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+  <div class="container d-flex align-items-center">
+  
+      <!---- TEAM NAME ---->
+      <div class="logo-nav">
+          <a class="navbar-brand" href="index.html">
+              <img class="nav-logo" src="images/logo.png" alt="Logo"/>
           </a>
-          </li>
-
-          <li class = "nav-item dropdown">
-            <a href = "#" class = "nav-link dropdown-toggle nav-link active"
-            rel = "nofollow"
-            target="_blank"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            >
-               Team
-
-            </a>
-            <ul class ="dropdown-menu"
-            aria-labelledby="navbarDropdown">
-              <li><a href="#"
-              class = "dropdown-item">Team</a></li>
-              <li><a href="#"
-              class = "dropdown-item">Attributions</a></li>
-              <li><a href="#"
-              class = "dropdown-item">Collaborations</a></li>
-          </ul>
-          
-          <li class = "nav-item dropdown">
-            <a href = "#" class = "nav-link dropdown-toggle nav-link active" 
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            >
-               Project
-            
-            </a>
-
-          <ul class ="dropdown-menu"
-            aria-labelledby="navbarDropdown">
-            <li><a href="#"
-            class = "dropdown-item">Communication</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Contribution</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Description</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Engineering</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Experiments</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Implementation</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Notebook</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Partnership</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Proof of Concept</a></li>
-            <li><a href="#"
-            class = "dropdown-item">Resutls</a></li>
-          </ul>
-
-       
-      <li class = "nav-item dropdown">
-        <a href = "#" class = "nav-link dropdown-toggle nav-link active" 
-        id="navbarDropdown"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        >
-           Parts
-      </a>
-
-      <ul class ="dropdown-menu"
-      aria-labelledby="navbarDropdown">
-        <li><a href="#"
-        class = "dropdown-item">Part Collection</a></li>
-        <li><a href="#"
-        class = "dropdown-item">Parts</a></li>
-        <li><a href="#"
-        class = "dropdown-item">Improve</a></li>
-      </ul>
-      </li>
-
-          <li class = "nav-item">
-            <a href = "#" class = "nav-link nav-link active">
-              Safety
-            </a>
-          </li>
- 
-        </li>
-        <li class = "nav-item">
-          <a href = "#" class = "nav-link nav-link active">
-            Human Practices
-          </a>
-        </li>
-
-          <!-- Include jQuery -->
-        <script src="path/to/jquery.min.js"></script>
-        <!-- Include Bootstrap JavaScript -->
-        <script src="path/to/bootstrap.min.js"></script>
-
-        </ul>
       </div>
-    </nav>
+  
+      <!---- SMALL SCREEN MENU ICON ---->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ml-auto left-aligned">
+  
+          <!---- HOME ---->
+          <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+          </li>
+  
+          <!---- PROJECT ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Project
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="description.html">Description</a></li>
+              <li><a class="dropdown-item" href="implementation.html">Implementation</a></li>
+              <li><a class="dropdown-item" href="contribution.html">Contribution</a></li>
+              <li><a class="dropdown-item" href="judging.html">Judging</a></li>
+              </ul>
+          </li>
+  
+          <!---- WET LAB ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wet Lab
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="wetlab.html">Overview</a></li>
+              <li><a class="dropdown-item" href="design.html">Design</a></li>
+              <li><a class="dropdown-item" href="engineering.html">Engineering</a></li>
+              <li><a class="dropdown-item" href="experiments.html">Experiments</a></li>
+              <li><a class="dropdown-item" href="results.html">Results</a></li>
+              <li><a class="dropdown-item" href="proof-of-concept.html">Proof of Concept</a></li>
+              <li><a class="dropdown-item" href="parts.html">Parts</a></li>
+              <li><a class="dropdown-item" href="safety.html">Safety</a></li>
+              </ul>
+          </li>
+  
+          <!---- DRY LAB ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dry Lab
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="drylab.html">Overview</a></li>
+              <li><a class="dropdown-item" href="model.html">Model</a></li>
+              <li><a class="dropdown-item" href="software.html">Software</a></li>
+              </ul>
+          </li>
+
+          <!---- HUMAN PRACTICES ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Human Practices
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="humanpractices.html">Overview</a></li>
+              <li><a class="dropdown-item" href="integrated-human-practices.html">Integrated Human Practices</a></li>
+              <li><a class="dropdown-item" href="educational-outreach.html">Educational Outreach</a></li>
+              </ul>
+          </li>
+
+          <!---- TEAM ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Team
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="team.html">Overview</a></li>
+              <li><a class="dropdown-item" href="members.html">Members</a></li>
+              <li><a class="dropdown-item" href="attributions.html">Attributions</a></li>
+              <li><a class="dropdown-item" href="collaborations.html">Collaborations</a></li>
+              <li><a class="dropdown-item" href="partnerships.html">Partnerships</a></li>
+              </ul>
+          </li>
+
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- Include jQuery -->
+<script src="path/to/jquery.min.js"></script>
+<!-- Include Bootstrap JavaScript -->
+<script src="path/to/bootstrap.min.js"></script>
+
 
      
-    <section>
-      <video src="videos/testvid.mp4" autoplay muted loop></video>
-      <div class="video-overlay">
-      <h1> CholesterLock</h1>
+    <section class = "white-text video-section">
+      <video class = "background-video" src="videos/heartvid.mp4" autoplay muted loop></video>
+      <div class="text-overlay glass">
+      <h1>CholesterLock</h1>
     </div>
     </section>
 
-    <section>
-      <div class = "container reveal">
-        <h2>Your Title</h2>
-        <div class = "cards">
-          <div class = "text-card">
-           <h3>Title</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-        <div class = "text-card">
-          <h3>Title</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-        <div class = "text-card">
-          <h3>Title</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
+    <section class = "hidden white-text">
+      <div>
+        <h2>text here</h2>
+        <div>
+            <img src = "images/whiteheart.jpg" width="700" height = "700">
       </div>
     </div>
     </section>
 
-    <section>
-      <div class = "container reveal">
-        <h2>Your Title</h2>
-        <div class = "cards">
-          <div class = "text-card">
-           <h3>Title</h3>
+    <section class = "hidden container-section">
+      <div class = "container glass">
+           <h3>text here</h3>
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
         </div>
-        <div class = "text-card">
-          <h3>Title</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-        <div class = "text-card">
-          <h3>Title</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-      </div>
-    </div>
+        <div class = "container glass">
+          <h3>text here</h3>
+           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+       </div>
+       <div class = "container glass">
+        <h3>text here</h3>
+         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+     </div>
     </section>
 
-    <section>
-      <div class = "container reveal">
-        <h2>Your Title</h2>
-        <div class = "cards">
-          <div class = "text-card">
-           <h3>Title</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-        <div class = "text-card">
-          <h3>Title</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-        <div class = "text-card">
-          <h3>Title</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-      </div>
-    </div>
-    </section>
-
-    <script type = "text/javascript">
-    window.addEventListener('scroll', reveal);
-
-    function reveal(){
-      var reveals = document.querySelectorAll('.reveal');
-
-      for(var i = 0; i < reveals.length; i++){
-
-        var windowheight = window.innerHeight;
-        var revealtop = reveals[i].getBoundingClientRect().top;
-        var revealpoint = 150;
-
-        if(revealtop < windowheight - revealpoint){
-            reveals[i].classList.add('active');
-        }
-        else{
-          reveals[i].classList.remove('active');
-        }
-      }
-    }
 
     </script>
 
