@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+font-family: 'Nunito', sans-serif;
+  color: white;
+}
+
+
+.blackbg{
+  background: black;
+}
+
+section {
+  display: grid;
+  /* place-items: center;
+  align-content: center;  */
+  min-height: 100vh;
+}
+
+section h1 {
+  font-size: 60px;
+}
+
+section h2 {
+  font-size: 40px;
+  
+}
+
+h1 {
+  font-size: 48px;
+}
+
+/* No scroll in x */
+body {
+  overflow-x: hidden;
+}
+
+/* Section Formatting --------------- */
+
+.section-1{
+  background: linear-gradient(#0F1034,black);
+  place-items: center center;
+
+}
+
+#section-2{
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+/* Section Content Formatting ------------------ */
+.section-2-text{
+  color: white;
+}
+
+
+.section-3 {
+  background: linear-gradient(black, #650310);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  grid-column-gap: 20px; /* Gap between columns */
+}
+
+.section-4{
+  background: linear-gradient(#650310,#AD1313, #E94716);
+}
+
+.section-5{
+  background: linear-gradient(#E94716, #ff6a0d)
+}
+
+.section-6 {
+  background: linear-gradient(#ff6a0d,#ffb640)
+}
+
+.section-7 {
+  background: linear-gradient(#ffb640, #EAE2b7)
+}
+
+/* Placement */
+
+.grid-2 {
+  margin-top: 150px;
+  grid-template-columns: 3;
+  grid-template-rows: 3;
+}
+
+.section-2 h2{
+  margin-top:100px;
+  grid-row:1;
+  grid-column:2;
+}
+
+.section-2 img{
+  grid-row:2;
+  grid-column:2;
+}
+
+.section-2 p{
+  grid-row:3;
+  grid-column:2;
+}
+
+.grid-3{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr; /* fr evenly distriutes space evenly*/
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.section-3 h2{
+  grid-column: 1/span 3;
+  text-align: center;
+  grid-row: 2;
+}
+
+.section-3 div:nth-child(2) {
+  font-size: 30px;
+  grid-row: 3;
+  grid-column: 1;
+  text-align: center;
+}
+
+.section-3 div:nth-child(3) {
+  font-size: 30px;
+  grid-row: 3;
+  grid-column: 3;
+  text-align: center;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.section-4 h2 {
+  grid-column: 2/ span 2;
+  grid-row: 2;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.section-4 img {
+  grid-column: 2 / span 2;
+  grid-row: 4 /span 2;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.section-5 h2 {
+  grid-column: 1;
+  grid-row: 1;
+  margin-left: 100px;
+  text-align: center;
+}
+
+.section-5 p {
+  grid-column: 1;
+  grid-row: 2;
+  margin-left: 100px;
+  margin-top: 75px;
+  text-align: center;
+}
+
+.section-5 img {
+  grid-column: 2 / span 2;
+  grid-row: 1/ span 3;
+}
+
+.grid-6 {
+  grid-template-rows: 1fr 1fr 1fr
+}
+.section-6 h2 {
+  grid-row: 1;
+  text-align: center;
+}
+
+.section-6 img {
+  grid-row: 2;
+  place-content: center;
+
+}
+.section-6 p{
+  grid-row: 3;
+  text-align: center;
+}
+
+
+
+

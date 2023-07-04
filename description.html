@@ -1,161 +1,166 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel = "stylesheet" href ="styling.css">
-    <script src = "app.js" defer></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="home-styling.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
 
-    <title>CholesterLock</title>
-  </head>
+  <title>CholesterLock</title>
+</head>
 
 <body>
 
-<!--TOP NAVBAR-->
-<nav class="top-nav navbar navbar-expand-lg navbar-dark py-3 fixed-top">
-  <div class="container d-flex align-items-center">
-  
-      <!---- TEAM NAME ---->
-      <div class="logo-nav">
-          <a class="navbar-brand" href="index.html">
-              <img class="nav-logo" src="images/logo.png" alt="Logo"/>
-          </a>
-      </div>
-  
-      <!---- SMALL SCREEN MENU ICON ---->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ml-auto left-aligned">
-  
-          <!---- HOME ---->
-          <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-          </li>
-  
-          <!---- PROJECT ---->
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Project
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="description.html">Description</a></li>
-              <li><a class="dropdown-item" href="implementation.html">Implementation</a></li>
-              <li><a class="dropdown-item" href="contribution.html">Contribution</a></li>
-              <li><a class="dropdown-item" href="judging.html">Judging</a></li>
-              </ul>
-          </li>
-  
-          <!---- WET LAB ---->
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Wet Lab
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="wetlab.html">Overview</a></li>
-              <li><a class="dropdown-item" href="design.html">Design</a></li>
-              <li><a class="dropdown-item" href="engineering.html">Engineering</a></li>
-              <li><a class="dropdown-item" href="experiments.html">Experiments</a></li>
-              <li><a class="dropdown-item" href="results.html">Results</a></li>
-              <li><a class="dropdown-item" href="proof-of-concept.html">Proof of Concept</a></li>
-              <li><a class="dropdown-item" href="parts.html">Parts</a></li>
-              <li><a class="dropdown-item" href="safety.html">Safety</a></li>
-              </ul>
-          </li>
-  
-          <!---- DRY LAB ---->
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dry Lab
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="drylab.html">Overview</a></li>
-              <li><a class="dropdown-item" href="model.html">Model</a></li>
-              <li><a class="dropdown-item" href="software.html">Software</a></li>
-              </ul>
-          </li>
 
-          <!---- HUMAN PRACTICES ---->
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Human Practices
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="humanpractices.html">Overview</a></li>
-              <li><a class="dropdown-item" href="integrated-human-practices.html">Integrated Human Practices</a></li>
-              <li><a class="dropdown-item" href="educational-outreach.html">Educational Outreach</a></li>
-              </ul>
-          </li>
+  <!-- Section 1 Start -->
+  <section class= "section-1">
+    <div>
+      <img src = "images/logo.png" width = "500" length = "1000"></img>
+    </div>
+  </section>
+  <!-- Section 1 End -->
 
-          <!---- TEAM ---->
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Team
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="team.html">Overview</a></li>
-              <li><a class="dropdown-item" href="members.html">Members</a></li>
-              <li><a class="dropdown-item" href="attributions.html">Attributions</a></li>
-              <li><a class="dropdown-item" href="collaborations.html">Collaborations</a></li>
-              <li><a class="dropdown-item" href="partnerships.html">Partnerships</a></li>
-              </ul>
-          </li>
 
-          </ul>
-      </div>
+<!-- Section 2 Start -->
+<section id="section-2" class = "blackbg">
+  <div>
+    <h2 class = "section-2-text">Did You Know?</h2>
+    <div class="content-container">
+      <img id="heart" src="images/whiteheart.jpg" width="400" height="400">
+      <p id="heart-text" class = "white-text"> 
+        Cardiovascular diseases are the leading cause of 
+        death worldwide and are caused by the buildup of
+        plaque on arterial walls, known as atherosclerosis.</p>
+    </div>
   </div>
-</nav>
-
-<!-- Include jQuery -->
-<script src="path/to/jquery.min.js"></script>
-<!-- Include Bootstrap JavaScript -->
-<script src="path/to/bootstrap.min.js"></script>
+</section>
 
 
-     
-    <section class = "white-text video-section">
-      <video class = "background-video" src="videos/heartvid.mp4" autoplay muted loop></video>
-      <div class="text-overlay glass">
-      <h1>CholesterLock</h1>
-    </div>
+<!-- Section 2 End -->
+
+
+<!-- Section 3 Start -->
+<section class="section-3 grid-3">
+  <h2><strong>In 2017 1.2 billion people suffered from elevated cholesterol levels and caused 4.4 million deaths.</strong> </h2>
+    <div class = "data">44000000</div>
+    <div class = "data">12000000000</div>
+    <img src = '#'></img>
+</section>
+<!-- Section 3 End -->
+
+
+    <!-- Section 4 Start -->
+    <section class="section-4">
+      <h2><strong>Escalating cardiovascular health risks linked to cholesterol are only expected to skyrocket.</strong></h2>
+      <img src = '#'></img>
     </section>
+    <!-- Section 4 End -->
 
-    <section class = "hidden white-text">
-      <div>
-        <h2>text here</h2>
-        <div>
-            <img src = "images/whiteheart.jpg" width="700" height = "700">
-      </div>
-    </div>
+    <!-- Section 5 Start -->
+     <section class="section-5 grid-5">
+      <h2> <strong>A major concern is the uptake of cholesterol via the protein NPC1L1 found in the brush border membrane of the small intestine. </strong></h2>
+      <p> The current solution is the usage of statins. But there are many potential downsides. Some of these downsides include <strong>liver damage and muscle related side effects.</strong></p>
+      <img src = '#'><img>
     </section>
+    <!-- Section 5 End -->
 
-    <section class = "hidden container-section">
-      <div class = "container glass">
-           <h3>text here</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-        </div>
-        <div class = "container glass">
-          <h3>text here</h3>
-           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+     <!-- Section 6 Start -->
+      <section class="section-6 grid-6">
+      <h2><strong>This is where Cholesterlock can help.</strong></h2>
+      <img src= '#'></img>
+      <p> By inhibiting the function of NPC1L1, it is possible to reduce the absorption of dietary cholesterol, which can help in reducing the risk of cardiovascular diseases.</p>
        </div>
-       <div class = "container glass">
-        <h3>text here</h3>
-         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-     </div>
-    </section>
+      </section>
+       <!-- Section 6 End -->
 
 
-    </script>
+       <!-- Section 7 Start -->
+      <section class="section-7 grid-7">
+        <div>
+        <h2> text here </h2>
+         </div>
+        </section>
+         <!-- Section 7 End -->
 
 
 
-  </body>
+
+
+
+
+
+<!---GSAP Start--------------------------------------->
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+  
+    gsap.to("#section-2", {
+      scrollTrigger: {
+        trigger: "#section-2",
+        scrub: 0.4,
+        anticipatePin: 1,
+        pin: true,
+        start: "top top",
+        pinSpacing: false,
+       // markers: true
+      }
+    });
+  
+    gsap.to("#heart", {
+  x: 500,
+  duration: 3,
+  scrollTrigger: {
+    trigger: "#heart",
+    start: "50%", // Adjust the start value as desired
+    end: "400",
+    scrub: 1,
+    //markers: true
+  }
+});
+
+    gsap.to(".section-3", {
+      x: 0,
+      duration: 4,
+      scrollTrigger: {
+        trigger: ".light-red-background",
+        start: "top center",
+        end: "400px",
+        scrub: 1,
+      //  markers: true
+
+      }
+    })
+
+    const numberPeople = document.querySelectorAll(".data");
+
+numberPeople.forEach((element) => {
+  gsap.to(element, {
+    textContent: element.dataset.value,
+    duration: 2,
+    ease: "power1.easeIn",
+    snap: { textContent: 1 },
+    from: { textContent: 0 }, // Animate from 0 to the desired value
+  });
+});
+
+
+  </script>
+
+<!-- GSAP END------------------------------------------------------------>
+
+
+
+</body>
+
 </html>
