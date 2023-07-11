@@ -1,0 +1,461 @@
+/*** Testing webpage styling ***/
+
+/* Styling for all pages */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Quicksand-Regular';
+}
+
+.dark-mode {
+    background-color: #07011B;
+    color: #fbe395;
+  }
+  
+  .dark-mode .navbar-nav .nav-link {
+    color: #FDF8BE;
+  }
+  
+  .dark-mode .navbar-nav .nav-link:hover {
+    color: #D62923;
+  }
+  
+  .dark-mode .dropdown-menu {
+    background-color: black;
+  }
+  
+  .dark-mode .dropdown-menu a:hover {
+    background-color: #FDF8BE;
+  }
+  
+  .dark-mode .dropdown-menu .dropdown-item {
+    color: white;
+  }
+  
+  .dark-mode .dropdown-menu .dropdown-item:hover {
+    color: #07011B;
+  }
+
+/*** TOP NAV BAR ***/
+
+.left-aligned { 
+    margin-left: auto; 
+}
+
+.top-nav{
+    border-bottom: 3PX solid white;
+    background-color: black;
+    padding: auto;
+}
+
+.nav-logo {
+    height: 3rem;
+}
+
+.navbar-nav .nav-link {
+    color: #FDF8BE; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: #D62923;
+}
+
+.dropdown-menu {
+    background-color: black;
+}
+
+.dropdown-menu a:hover {
+    background-color: #FDF8BE;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #07011B;
+}
+
+
+/*** CONTENT ***/
+
+body {
+    background-color: #07011B;
+}
+
+#header-banner-div {
+    width: 100;
+    height: 70vh;
+    background-color: #07011B;
+    /*background-image: url("img/Background Design.svg");*/
+    border-bottom: 3PX solid white;
+    color: #fbe395;
+    font-size: 2rem;
+    margin-top: 5rem;
+    padding-top: 15rem;
+    padding-left: 5rem;
+}
+
+#main-div {
+    width: 100%;
+    display: flex;
+}
+
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+/* SIDE BAR */
+
+#sidebar {
+    min-height: 800px;
+    background-color: black;
+    border-right: 3px solid white;
+    color: #FDF8BE;
+    float: left;
+    padding: 2rem;
+}
+
+.side-circle {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.side-nav {
+    padding-top: 2rem;
+    padding-left: 2.5rem;
+}
+
+.side-title {
+    color: #fbe395;
+}
+
+.side-title:hover {
+    color: #D62923;
+}
+
+@media (max-width: 900px) {
+    #sidebar {
+        display: none;
+    }
+
+    #main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 900px) {
+    #sidebar {
+        display: block;
+        width: 17rem;
+    }
+
+    #main-content {
+        flex: 1;
+    }
+}
+
+/* MAIN SECTION */
+
+#main-content {
+    min-height: 800px;
+    background-color: #07011B;
+    color: #fbe395;
+    float: right;
+}
+
+#main-content p {
+    color: white;
+    font-size: 1.2em;
+}
+
+.main-section {
+    height: fit-content;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 4.5rem;
+}
+
+.sub-section {
+    height: fit-content;
+    padding: 2rem;
+    margin: 4.5rem;
+}
+
+/* Figure */
+
+.circle-container {
+    width: 100%;
+    text-align: center;
+}
+
+.circle-nav {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    line-height: 14rem;
+}
+
+/* Figure */
+
+.figtext-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.figure {
+    flex: 1;
+    max-width: 100%;
+    margin: 1.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-img {
+    width: 30rem;
+    height: 20rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.circle-img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.fig-label {
+    text-align: center;
+    max-width: 25rem;;
+}
+
+.fig-text {
+    flex: 1;
+    max-width: 100%;
+    min-width: 45%;
+}
+
+@media (max-width: 1000px) {
+    .figtext-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Glass Effect */
+.glass {
+    background: linear-gradient(
+        325deg,
+        rgba(47, 22, 145, 0.2),
+        rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 3px solid white;
+    box-shadow: 0 10px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*** FOOTER ***/
+
+#page-footer {
+    padding: 2%;
+    background-color: black;
+    border-top: 3PX solid white;
+    color: #fbe395;
+}
+
+
+.footer-logo{
+    width: 10rem;
+    padding-bottom: 2vh;
+}
+
+.social-media{
+    width: 2.5rem;
+    padding: 0.1rem;
+    display: inline-block;
+}
+
+.social-media.fb:hover img{
+    content: url('https://static.igem.wiki/teams/4944/wiki/img/icons/facebook-icon-c.svg');
+}
+
+.social-media.tw:hover img{
+    content: url('https://static.igem.wiki/teams/4944/wiki/img/icons/twitter-icon-c.svg');
+}
+
+.social-media.in:hover img{
+    content: url('https://static.igem.wiki/teams/4944/wiki/img/icons/instagram-icon-c.svg');
+}
+
+.social-media.li:hover img{
+    content: url('https://static.igem.wiki/teams/4944/wiki/img/icons/linkedin-icon-c.svg');
+}
+
+.social-media.yo:hover img{
+    content: url('https://static.igem.wiki/teams/4944/wiki/img/icons/youtube-icon-c.svg');
+}
+
+.social-media.ti:hover img{
+    content: url('https://static.igem.wiki/teams/4944/wiki/img/icons/tiktok-icon-c.svg');
+}
+
+.social-media.ma:hover img{
+    content: url('https://static.igem.wiki/teams/4944/wiki/img/icons/mail-icon-c.svg');
+}
+
+.mail {
+    display:inline-block;
+}
+
+.socials{
+    margin-top: 1rem;
+    padding-left: 0.7rem;
+}
+
+.nav-title{
+    line-height: 10vh;
+    text-decoration: none;
+    color: #fbe395;
+    padding-bottom: 2%;
+}
+
+.nav-title:hover {
+    line-height: 10vh;
+    text-decoration: none;
+    color: #D62923;
+    padding-bottom: 2%;
+}
+
+#footer ul a{
+    color: white; 
+    text-decoration: none;
+    font-weight: 100;
+    padding: 0 0rem;
+    text-align: left;
+}
+
+#footer ul a:hover{
+    text-decoration: underline;
+    color: #FDF8BE;
+}
+
+#footer h3{
+    color: #fbe395; 
+    text-decoration: none;
+    padding: 0 0rem;
+    text-align: left;
+    font-size: large;
+}
+
+#footer .section {
+    padding-top: 2vh;
+}
+
+.license {
+    text-align: center;
+}
+
+
+
+/*** FONT ***/
+
+/* Quicksand-Bold */
+@font-face {
+    font-family: 'Quicksand-Bold';
+    src: url('https://static.igem.wiki/teams/4944/wiki/font/quicksand/quicksand-bold.ttf') format('truetype')
+}
+
+/* Quicksand-Light */
+@font-face {
+    font-family: 'Quicksand-Light';
+    src: url('https://static.igem.wiki/teams/4944/wiki/font/quicksand/quicksand-light.ttf') format('truetype')
+}
+
+/* Quicksand-Medium */
+@font-face {
+    font-family: 'Quicksand-Medium';
+    src: url('https://static.igem.wiki/teams/4944/wiki/font/quicksand/quicksand-medium.ttf') format('truetype')
+}
+
+/* Quicksand-Regular */
+@font-face {
+    font-family: 'Quicksand-Regular';
+    src: url('https://static.igem.wiki/teams/4944/wiki/font/quicksand/quicksand-regular.ttf') format('truetype')
+}
+
+/* Quicksand-SemiBold */
+@font-face {
+    font-family: 'Quicksand-SemiBold';
+    src: url('https://static.igem.wiki/teams/4944/wiki/font/quicksand/quicksand-semibold.ttf') format('truetype')
+}
+
+/* Open Sans-Regular */
+@font-face {
+    font-family: 'Open_Sans-Regular';
+    src: url('https://static.igem.wiki/teams/4944/wiki/font/open-sans/opensans-regular.ttf') format('truetype');
+}
+
+/* Open Sans-Light */
+@font-face {
+    font-family: 'Open_Sans-Light';
+    src: url('https://static.igem.wiki/teams/4944/wiki/font/open-sans/opensans-regular.ttf') format('truetype');
+}
+
+
+
+/*** TEXT ***/
+
+.title{
+    line-height: 10vh;
+    color: #fbe395;
+    padding-bottom: 2%;
+}
+
+.subtitle{
+    font-family: 'Quicksand-Regular';
+    font-size: 2rem;
+    color: #f99c1c;
+}
+
+.text{
+    font-family: 'Open_Sans-Light';
+    font-size: 6h;
+    color: white;
+}
+
+.label {
+    font-family: 'Quicksand-Light';
+    font-size: 4h;
+    color: #fbe395;
+}
+
+.smalltext{
+    font-size: 4vh;
+    color:#fbe395;
+}
+.smallertext{
+    font-size: 2vh;
+    color:#fbe395;
+}
+
+
+

@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		<link id="css-file" rel="stylesheet" href="dark-mode.css">
+        <title>CholesterLock</title>
+    </head>
+   
+    <body>
+            
+        <!--TOP NAVBAR-->
+        <nav class="top-nav navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+            <div class="container d-flex align-items-center">
+            
+                <!---- TEAM NAME ---->
+                <div class="logo-nav">
+                    <a class="navbar-brand" href="{{ url_for('pages', page='home') }}">
+                        <img class="nav-logo" src="https://static.igem.wiki/teams/4944/wiki/img/logo.png" alt="Logo"/>
+                    </a>
+                </div>
+            
+                <!---- SMALL SCREEN MENU ICON ---->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ml-auto left-aligned">
+            
+                    <!---- HOME ---->
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/home.html">Home</a>
+                    </li>
+            
+                    <!---- PROJECT ---->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Project
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="pages/description.html">Description</a></li>
+                            <li><a class="dropdown-item" href="pages/implementation.html">Implementation</a></li>
+                            <li><a class="dropdown-item" href="pages/contribution.html">Contribution</a></li>
+                            <li><a class="dropdown-item" href="pages/notebook.html">Notebook</a></li>
+                            <li><a class="dropdown-item" href="pages/judging.html">Judging</a></li>
+                        </ul>
+                    </li>
+            
+                    <!---- WET LAB ---->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Wet Lab
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="pages/wetlab.html">Overview</a></li>
+                        <li><a class="dropdown-item" href="pages/design.html">Design</a></li>
+                        <li><a class="dropdown-item" href="pages/engineering.html">Engineering</a></li>
+                        <li><a class="dropdown-item" href="pages/experiments.html">Experiments</a></li>
+                        <li><a class="dropdown-item" href="pages/results.html">Results</a></li>
+                        <li><a class="dropdown-item" href="pages/proof-of-concept.html">Proof of Concept</a></li>
+                        <li><a class="dropdown-item" href="pages/parts.html">Parts</a></li>
+                        <li><a class="dropdown-item" href="pages/safety.html">Safety</a></li>
+                        </ul>
+                    </li>
+            
+                    <!---- DRY LAB ---->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dry Lab
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="pages/drylab.html">Overview</a></li>
+                        <li><a class="dropdown-item" href="pages/model.html">Model</a></li>
+                        <li><a class="dropdown-item" href="pages/software.html">Software</a></li>
+                        </ul>
+                    </li>
+        
+                    <!---- HUMAN PRACTICES ---->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Human Practices
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="pages/humanpractices.html">Overview</a></li>
+                        <li><a class="dropdown-item" href="pages/human-practices.html">Integrated Human Practices</a></li>
+                        <li><a class="dropdown-item" href="pages/education.html">Educational Outreach</a></li>
+                        <li><a class="dropdown-item" href="pages/sustainable.html">Sustainability</a></li>
+                        <li><a class="dropdown-item" href="pages/entrepreneurship.html">Entrepreneurship</a></li>
+                        <li><a class="dropdown-item" href="pages/inclusivity.html">Inclusivity</a></li>
+                        <li><a class="dropdown-item" href="pages/branding.html">Branding</a></li>
+                        </ul>
+                    </li>
+        
+                    <!---- TEAM ---->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Team
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="pages/team.html">Overview</a></li>
+                        <li><a class="dropdown-item" href="pages/members.html">Members</a></li>
+                        <li><a class="dropdown-item" href="pages/attributions.html">Attributions</a></li>
+                        <li><a class="dropdown-item" href="pages/collaborations.html">Collaborations</a></li>
+                        <li><a class="dropdown-item" href="pages/partnerships.html">Partnerships</a></li>
+                        </ul>
+                    </li>
+
+                    <button onclick="changeCSS()">Mode</button>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div id="wrapper-div">
+        <!--CONTENT-->
+            <div id="header-banner-div">
+                Header/Banner
+            </div>
+
+            <div id="main-div" class="clearfix">
+                <div id="sidebar">
+                    <div class="side-circle"></div>
+                    <div class="side-nav">
+                        <ul>
+                            <li><a class="side-title" href="#section1">Section 1</a></li>
+                            <li><a class="side-title" href="#section2">Section 2</a></li>
+                            <li><a class="side-title" href="#section3">Section 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="main-content">
+                    <div class="main-section glass">
+                        <h3 class="subtitle">Overview</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+                    </div>
+
+                    <div class="circle-container">
+                        <div class="circle-nav glass subtitle">Section 1</div>
+                        <div class="circle-nav glass subtitle">Section 2</div>
+                        <div class="circle-nav glass subtitle">Section 3</div>
+                    </div>
+
+                    <div class="sub-section">
+                        <h3 id="section1" class="subtitle">Section 1</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                        </p>
+                        <div class="figtext-container">
+                            <div class="figure">
+                                <div class="circle-img glass"></div>
+                                <div class="fig-label">Figure 1: A nice glass circle for testing the layout of the circle shaped figure</div>
+                            </div>
+                            <div class="fig-text">
+                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+                            </div>
+                        </div>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+                        <div class="figtext-container">
+                            <div class="fig-text">
+                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+                            </div>
+                            <div class="figure">
+                                <div class="box-img glass"></div>
+                                <div class="fig-label">Figure 2: A nice glass box for testing the layout of the box shaped figure</div>
+                            </div>
+                        </div>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                        </p>
+                    </div>
+
+                    <div class="sub-section">
+                        <h3 id="section2" class="subtitle">Section 2</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                        </p>
+                        <div class="figtext-container">
+                            <div class="figure">
+                                <div class="box-img glass"></div>
+                                <div class="fig-label">Figure 3: A nice glass box for testing the layout of the box shaped figure</div>
+                            </div>
+                            <div class="fig-text">
+                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+                            </div>
+                        </div>
+                        <div class="figtext-container">
+                            <div class="fig-text">
+                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+                            </div>
+                            <div class="figure">
+                                <div class="circle-img glass"></div>
+                                <div class="fig-label">Figure 4: A nice glass circle for testing the layout of the circle shaped figure</div>
+                            </div>
+                        </div>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                        </p>
+                    </div>
+
+                    <div class="sub-section">
+                        <h3 id="section3" class="subtitle">Section 3</h3>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                        </p>
+                        <div class="figtext-container">
+                            <div class="fig-text">
+                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+                            </div>
+                            <div class="figure">
+                                <div class="circle-img glass"></div>
+                                <div class="fig-label">Figure 5: A nice glass circle for testing the layout of the circle shaped figure</div>
+                            </div>
+                        </div>
+                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--FOOTER-->
+        <div id="page-footer">
+            <div id="footer">
+                <div class="row pt-3">
+                    <div class="col-md-2">
+                        <div class="logo-nav">
+                            <a href="index.html">
+                                <img class="footer-logo" src="https://static.igem.wiki/teams/4944/wiki/img/logo.png" alt="Logo"/>
+                            </a>
+                        </div>
+                        <div class="contact-nav pb-4">
+                            <h3>Follow Us</h3>
+                            <div class="socials pb-2">
+                                <a href="https://www.facebook.com/igemcalgary/" class="social-media fb"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/facebook-icon.svg" alt="Facebook"></a>
+                                <a href="https://twitter.com/igemcalgary/" class="social-media tw"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/twitter-icon.svg" alt="Twitter"></a>
+                                <a href="https://www.instagram.com/igemcalgary/" class="social-media in"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/instagram-icon.svg" alt="Instagram"></a>
+                                <a href="https://www.linkedin.com/company/igem-calgary/" class="social-media li"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/linkedin-icon.svg" alt="LinkedIn"></a>
+                                <a href="https://www.youtube.com/user/igemcalgary" class="social-media yo"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/youtube-icon.svg" alt="Youtube"></a>
+                                <a href="https://www.tiktok.com/@igemcalgary" class="social-media ti"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/tiktok-icon.svg" alt="TikTok"></a>
+                            </div>
+                            <h3 class="pt-2">Contact Us</h3>
+                            <div class="socials pb-2">
+                                <a href="mailto: igemcalgary@ucalgary.ca" class="mail social-media ma"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/mail-icon.svg" alt="Mail"></a>
+                                <a href="mailto: igemcalgary@ucalgary.ca" class="mail">igemcalgary@ucalgary.ca</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="section">
+                            <a class="nav-title" href="#"><h5>Project</h5></a>
+                            <ul id="project-list">
+                                <li><a href="pages/description.html">Description</a></li>
+                                <li><a href="pages/implementation.html">Implementation</a></li>
+                                <li><a href="pages/contribution.html">Contribution</a></li>
+                                <li><a href="pages/notebook.html">Notebook</a></li>
+                                <li><a href="pages/judging.html">Judging</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="section">
+                            <a class="nav-title" href="#"><h5>Wet Lab</h5></a>
+                            <ul id="wetlab-list">
+                                <li><a href="pages/wetlab.html">Overview</a></li>
+                                <li><a href="pages/design.html">Design</a></li>
+                                <li><a href="pages/engineering.html">Engineering</a></li>
+                                <li><a href="pages/experiments.html">Experiments</a></li>
+                                <li><a href="pages/results.html">Results</a></li>
+                                <li><a href="pages/proof-of-concept.html">Proof of Concept</a></li>
+                                <li><a href="pages/parts.html">Parts</a></li>
+                                <li><a href="pages/safety.html">Safety</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="section">
+                            <a class="nav-title" href="#"><h5>Dry Lab</h5></a>
+                            <ul id="drylab-list">
+                                <li><a href="pages/drylab.html">Overview</a></li>
+                                <li><a href="pages/model.html">Model</a></li>
+                                <li><a href="pages/software.html">Software</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="section">
+                            <a class="nav-title" href="#"><h5>Human Practices</h5></a>
+                            <ul id="humanpractices-list">
+                                <li><a href="pages/humanpractices.html">Overview</a></li>
+                                <li><a href="pages/human-practices.html">Integrated Human Practices</a></li>
+                                <li><a href="pages/education.html">Educational Outreach</a></li>
+                                <li><a href="pages/sustainable.html">Sustainability</a></li>
+                                <li><a href="pages/entrepreneurship.html">Entrepreneurship</a></li>
+                                <li><a href="pages/inclusivity.html">Inclusivity</a></li>
+                                <li><a href="pages/branding.html">Branding</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="section">
+                            <a class="nav-title" href="#"><h5>Team</h5></a>
+                            <ul id="team-list">
+                                <li><a href="pages/team.html">Overview</a></li>
+                                <li><a href="pages/members.html">Members</a></li>
+                                <li><a href="pages/attributions.html">Attributions</a></li>
+                                <li><a href="pages/collaborations.html">Collaborations</a></li>
+                                <li><a href="pages/partnerships.html">Partnerships</a></li>
+                            </ul>
+                        </div>
+                    </div>   
+                </div>
+                <div class="row pt-3 pb-3">
+                    <div class="license centered col-md-12">
+                        <p><small>© 2023 - Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+                        <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2023/calgary">gitlab.igem.org/2023/calgary</a>.</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!--- Javascript for Functionality-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+            <script src="app.js"></script>
+            <script type ="text/javascript">
+                var progressbar = document.getElementById("progressbar");
+                var percent = document.getElementById("percent");
+        
+                var totalHeight = document.body.scrollHeight - window.innerHeight;
+                window.onscroll = function(){
+                    var progress = (window.pageYOffset / totalHeight) * 100;
+                    progressbar.style.height = progress + "%";
+                }
+            </script>
+
+            <script type="text/javascript">
+                var currentStyle = 'dark-mode.css';
+
+                function changeCSS() {
+                    var styleSheet = document.getElementById('css-file');
+                    
+                    if (currentStyle === 'dark-mode.css') {
+                        styleSheet.href = 'dark-mode.css';
+                        currentStyle = 'light-mode.css';
+                    } else {
+                        styleSheet.href = 'dark-mode.css';
+                        currentStyle = 'dark-mode.css';
+                    }
+                }
+            </script>
+
+    </body>
+</html>
