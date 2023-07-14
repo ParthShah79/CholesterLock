@@ -113,7 +113,89 @@
             </div>
         </nav>
 
+<style>
 
+    .faq{
+        max-width: 700px;
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #fff;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+
+    }
+
+    .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .question h3 {
+        font-size: 1.8rem;
+    }
+
+    .answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease;
+    }
+
+    .answer p {
+        padding-top: 1rem;
+        line-height: 1.6;
+        font-size: 1.4rem;
+    }
+
+    .faq.active .answer {
+        max-height: 300px;
+        animation: fade 1s ease-in-out;
+    }
+
+    .faq.active svg {
+        transform: rotate(180deg);
+    }
+
+    svg {
+        transition: transform 0.5s ease-in;
+    }
+
+    @keyframes fade {
+        from{
+            opacity: 0;
+            transform: translateY(0px);
+        }
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .dropdown.active {
+        display: block;
+    }
+
+    .centered-h2{
+        margin-top: 100px;
+        text-align: center;
+        margin-bottom: 100px;
+        border:5px solid white;
+    }
+
+    .centered-h3{
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    .centered-text{
+        margin-left:auto;
+        margin-right: auto;
+    }
+    
+
+</style>
 
         <div id="wrapper-div">
         <!--CONTENT-->
@@ -121,104 +203,237 @@
                 Header/Banner
             </div>
 
-            <div id="main-div" class="clearfix">
-                <div id="sidebar">
-                    <div class="side-circle"></div>
-                    <div class="side-nav">
-                        <ul>
-                            <li><a class="side-title" href="#section1">Section 1</a></li>
-                            <li><a class="side-title" href="#section2">Section 2</a></li>
-                            <li><a class="side-title" href="#section3">Section 3</a></li>
-                        </ul>
-                    </div>
-                </div>
 
                 <div id="main-content">
+                <div id = "myDropdown">
                     <div class="main-section glass">
                         <h3 class="subtitle">Overview</h3>
                         <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
                     </div>
 
                     <div class="circle-container">
-                        <div class="circle-nav glass subtitle">Section 1</div>
-                        <div class="circle-nav glass subtitle">Section 2</div>
-                        <div class="circle-nav glass subtitle">Section 3</div>
+                        <button onclick="showwet()" class="circle-nav glass subtitle"> Dry Lab </button>
+                        <button onclick="showdry()" class="circle-nav glass subtitle">Wet Lab</button>
+                        
                     </div>
 
-                    <div class="sub-section">
-                        <h3 id="section1" class="subtitle">Section 1</h3>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                        </p>
-                        <div class="figtext-container">
-                            <div class="figure">
-                                <div class="circle-img glass"></div>
-                                <div class="fig-label">Figure 1: A nice glass circle for testing the layout of the circle shaped figure</div>
-                            </div>
-                            <div class="fig-text">
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-                            </div>
-                        </div>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-                        <div class="figtext-container">
-                            <div class="fig-text">
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-                            </div>
-                            <div class="figure">
-                                <div class="box-img glass"></div>
-                                <div class="fig-label">Figure 2: A nice glass box for testing the layout of the box shaped figure</div>
-                            </div>
-                        </div>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                        </p>
-                    </div>
 
-                    <div class="sub-section">
-                        <h3 id="section2" class="subtitle">Section 2</h3>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                        </p>
-                        <div class="figtext-container">
-                            <div class="figure">
-                                <div class="box-img glass"></div>
-                                <div class="fig-label">Figure 3: A nice glass box for testing the layout of the box shaped figure</div>
-                            </div>
-                            <div class="fig-text">
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-                            </div>
-                        </div>
-                        <div class="figtext-container">
-                            <div class="fig-text">
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-                            </div>
-                            <div class="figure">
-                                <div class="circle-img glass"></div>
-                                <div class="fig-label">Figure 4: A nice glass circle for testing the layout of the circle shaped figure</div>
-                            </div>
-                        </div>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                        </p>
-                    </div>
 
-                    <div class="sub-section">
-                        <h3 id="section3" class="subtitle">Section 3</h3>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                        </p>
-                        <div class="figtext-container">
-                            <div class="fig-text">
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
-                            </div>
-                            <div class="figure">
-                                <div class="circle-img glass"></div>
-                                <div class="fig-label">Figure 5: A nice glass circle for testing the layout of the circle shaped figure</div>
-                            </div>
-                        </div>
-                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                            <b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
-                        </p>
+
+
+            <div id = dry class = dropdown>
+            <h2 class = "centered-h2"> <strong>Dry Lab</strong></h2>
+
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">May 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">June 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">July 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">August 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">September 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">October 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div id = wet class = dropdown>
+                <h2 class = "centered-h2"><strong>Wet Lab</strong></h2>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">May 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">June 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">July 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">August 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">September 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+
+                <div class="faq">
+                    <div class="question">
+                        <h3 class="centered-h3">October 2023</h3>
+        
+                            <svg width ="15" height="10" viewBox = "0 0 42 25">
+                                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                            </svg>
+
+                    </div>
+                    <div class = "answer">
+                        <p>text herererere</p>
+                    </div>
+                </div>
+            </div>
+
+
+                <script>
+                    const faqs = document.querySelectorAll(".faq");
+
+                    faqs.forEach(faq => {
+                        faq.addEventListener("click", () => {
+                            faq.classList.toggle("active")
+                    })
+                })
+
+                function showdry() {
+                    document.getElementById('wet').style.display = 'block';
+                    document.getElementById('dry').style.display = 'none';
+                }
+
+                function showwet() {
+                    document.getElementById('wet').style.display = 'none';
+                    document.getElementById('dry').style.display = 'block';
+
+                    
+                }
+
+
+
+                </script>
+
+
+
+
+
+
+                </div>
+
                     </div>
 
                 </div>
