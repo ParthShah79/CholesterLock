@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+  <link rel="icon" href="https://static.igem.wiki/teams/4944/wiki/img/favicon.svg" type="image/svg">
+
+  <!-- Bootstrap CSS -->
+  <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'home-styling2.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
+  <link id="css-file" href="{{ url_for('static', filename = 'dark-mode.css') }}" rel="stylesheet">
+
+  <title>Home | Calgary - iGEM 2023</title>
+
+</head>
+
+<!-- Navigation -->
+<nav class="top-nav navbar navbar-expand-lg py-3 fixed-top">
+  <div class="container d-flex align-items-center">
+  
+      <!---- TEAM NAME ---->
+      <div class="logo-nav">
+          <a class="navbar-brand" href="{{ url_for('pages', page='home') }}">
+              <img class="nav-logo" src="https://static.igem.wiki/teams/4944/wiki/img/logo.png" alt="Logo"/>
+          </a>
+      </div>
+  
+      <!---- SMALL SCREEN MENU ICON ---->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ml-auto left-aligned">
+  
+          <!---- HOME ---->
+          <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('pages', page='home') }}">Home</a>
+          </li>
+  
+          <!---- PROJECT ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Project
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='judging') }}">Judging</a></li>
+              </ul>
+          </li>
+  
+          <!---- WET LAB ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wet Lab
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}">Overview</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='design') }}">Design</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Safety</a></li>
+              </ul>
+          </li>
+  
+          <!---- DRY LAB ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dry Lab
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='drylab') }}">Overview</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
+              </ul>
+          </li>
+
+          <!---- HUMAN PRACTICES ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Human Practices
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='humanpractices') }}">Overview</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Integrated Human Practices</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Educational Outreach</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainability</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='branding') }}">Branding</a></li>
+              </ul>
+          </li>
+
+          <!---- TEAM ---->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Team
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Overview</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='members') }}">Members</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='partnerships') }}">Partnerships</a></li>
+              </ul>
+          </li>
+
+          <!-- MODE BUTTON -->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Accessibility
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <button class="dropdown-item" onclick="togglerCSS()">Light/Dark Mode</button>
+              </ul>
+          </li>
+
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- Section 1 Start -->
+<section class="section-1">
+  <div>
+    <img class="logo1" src="https://static.igem.wiki/teams/4944/wiki/img/logo.png"></img>
+  </div>
+</section>
+<!-- Section 1 End -->
+
+<!-- Section 2 Start -->
+<section class=" section-2">
+  <div class="container2">
+    <div class="figure2">
+        <div class="circle2 glass">
+          <img src="https://static.igem.wiki/teams/4944/wiki/whiteheart.jpg" alt="Heart">
+        </div>
+    </div>
+    <div class="fig-text2">
+      <h2 class="title2">Did You Know?</h2>
+      <p class="text2"><b>Cardiovascular disease</b> is the leading cause of 
+          death worldwide and is caused by the buildup of
+          plaque on arterial walls, known as atherosclerosis.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Section 2 End -->
+
+
+<!-- Section 3 Start -->
+<section class="section-3">
+  <div class="stats-container">
+    <div class="stats">
+      <p><b>#1 cause</b> of death</p>
+    </div>
+    <div class="stats">
+      <p>Effected <b>1.2 billion</b> in 2017</p>
+    </div>
+    <div class="stats">
+      <p>Caused <b>1.7 million</b> deaths</p>
+    </div>
+  </div>
+  <div class="container3">
+    <div class="fig-text3">
+      <p class="text3"> Escalating cardiovascular health risks 
+        are linked to cholesterol and are expected to skyrocket.
+      </p>
+    </div>
+    <div class="figure3">
+      <div class="circle3 glass">
+        <img src="https://static.igem.wiki/teams/4944/wiki/whiteheart.jpg" alt="Heart">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section 3 End -->
+
+
+<!-- Section 4 Start -->
+<section class="section-4">
+  <div class="main-section4 glass">
+    <h2 class="title4">Problem</h2>
+    <p class="text4">The current solution is the usage of statins. But there are many potential downsides. Some of these downsides include <strong>liver damage and muscle related side effects.</strong></p>
+  </div>
+  <div class="container4">
+    <div class="stat4">
+      <p class="text-stat4">1 in 5 people</p>
+    </div>
+    <div class="stat4">
+      <p class="text-stat4">High Cholesterol Statistic</p>
+    </div>
+  </div>
+</section>
+<!-- Section 4 End -->
+
+<!-- Section 5 Start -->
+<section class="section-5">
+  <h2 class="title5">Therefore, we present</h2>
+  <img class="logo5" src="https://static.igem.wiki/teams/4944/wiki/img/logo-cholesterlock4.svg"></img>
+</section>
+<!-- Section 5 End -->
+
+
+<!-- Section 6 Start -->
+<section class="section-6">
+  <div class="container6-1">
+    <div class="fig-text6">
+      <h2 class="title6">Purpose</h2>
+      <p class="text6-1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+      </p>
+    </div>
+  </div>
+  <div class="container6-2">
+    <div class="figure6">
+      <div class="circle6 glass">
+        <img src="https://static.igem.wiki/teams/4944/wiki/whiteheart.jpg" alt="Heart">
+      </div>
+    </div>
+    <div class="fig-text6">
+      <h2 class="title6">Target</h2>
+      <p class="text6-2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Section 6 End -->
+
+<!-- Section 7 Start -->
+<section class="section-7">
+  <div class="container7-1">
+    <div class="fig-text7">
+      <h2 class="title7">Mechanism</h2>
+      <p class="text7"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.
+      </p>
+    </div>
+  </div>
+  <div class="container7-2"></div>
+</section>
+<!-- Section 7 End -->
+
+<!-- Section 8 Start -->
+<section class="section-8">
+  <div class="main-section8 glass">
+    <h2 class="title8-1">Solution</h2>
+    <p class="text8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. <b>Etiam dapibus</b> condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a eleifend urna. In egestas ut erat id molestie. Etiam dapibus condimentum magna ut vestibulum. Donec quis leo in dui facilisis feugiat. Quisque ultricies sollicitudin suscipit. Phasellus in mollis felis. Phasellus eget laoreet felis. Etiam lacinia at sem a placerat.</p>
+  </div>
+  <div class="learn-more">
+    <h2 class="title8-2">Learn More</h2>
+    <div class="container8">
+      <div class="circle8 glass subtitle">Section 1</div>
+      <div class="circle8 glass subtitle">Section 2</div>
+      <div class="circle8 glass subtitle">Section 3</div>
+      <div class="circle8 glass subtitle">Section 4</div>
+      <div class="circle8 glass subtitle">Section 5</div>
+    </div>
+  </div>
+</section>
+<!-- Section 8 End -->
+
+
+  <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+
+<!--FOOTER-->
+<div id="page-footer">
+  <div id="footer">
+      <div class="row pt-3">
+          <div class="col-md-2">
+              <div class="logo-nav">
+                  <a href="index.html">
+                      <img class="footer-logo" src="https://static.igem.wiki/teams/4944/wiki/img/logo.png" alt="Logo"/>
+                  </a>
+              </div>
+                <div class="contact-nav pb-4">
+                    <h3>Follow Us</h3>
+                    <div class="socials pb-2">
+                        <a href="https://www.facebook.com/igemcalgary/" class="social-media fb"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/facebook-icon.svg" alt="Facebook"></a>
+                        <a href="https://twitter.com/igemcalgary/" class="social-media tw"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/twitter-icon.svg" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/igemcalgary/" class="social-media in"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/instagram-icon.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/company/igem-calgary/" class="social-media li"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/linkedin-icon.svg" alt="LinkedIn"></a>
+                        <a href="https://www.youtube.com/user/igemcalgary" class="social-media yo"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/youtube-icon.svg" alt="Youtube"></a>
+                        <a href="https://www.tiktok.com/@igemcalgary" class="social-media ti"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/tiktok-icon.svg" alt="TikTok"></a>
+                    </div>
+                    <h3 class="pt-2">Contact Us</h3>
+                    <div class="socials pb-2">
+                        <a href="mailto: igemcalgary@ucalgary.ca" class="mail social-media ma"><img src="https://static.igem.wiki/teams/4944/wiki/img/icons/mail-icon.svg" alt="Mail"></a>
+                        <a href="mailto: igemcalgary@ucalgary.ca" class="mail">igemcalgary@ucalgary.ca</a>
+                    </div>
+                </div>
+          </div>
+          <div class="col-md-2">
+              <div class="section">
+                  <a class="nav-title" href="#"><h5>Project</h5></a>
+                  <ul id="project-list">
+                    <li><a href="{{ url_for('pages', page='description') }}">Description</a></li>
+                    <li><a href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+                    <li><a href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+                    <li><a href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+                    <li><a href="{{ url_for('pages', page='judging') }}">Judging</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="section">
+                  <a class="nav-title" href="#"><h5>Wet Lab</h5></a>
+                  <ul id="wetlab-list">
+                    <li><a href="{{ url_for('pages', page='wetlab') }}">Overview</a></li>
+                    <li><a href="{{ url_for('pages', page='design') }}">Design</a></li>
+                    <li><a href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+                    <li><a href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+                    <li><a href="{{ url_for('pages', page='results') }}">Results</a></li>
+                    <li><a href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+                    <li><a href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+                    <li><a href="{{ url_for('pages', page='safety') }}">Safety</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="section">
+                  <a class="nav-title" href="#"><h5>Dry Lab</h5></a>
+                  <ul id="drylab-list">
+                    <li><a href="{{ url_for('pages', page='drylab') }}">Overview</a></li>
+                    <li><a href="{{ url_for('pages', page='model') }}">Model</a></li>
+                    <li><a href="{{ url_for('pages', page='software') }}">Software</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="section">
+                  <a class="nav-title" href="#"><h5>Human Practices</h5></a>
+                  <ul id="humanpractices-list">
+                    <li><a href="{{ url_for('pages', page='humanpractices') }}">Overview</a></li>
+                    <li><a href="{{ url_for('pages', page='human-practices') }}">Integrated Human Practices</a></li>
+                    <li><a href="{{ url_for('pages', page='education') }}">Educational Outreach</a></li>
+                    <li><a href="{{ url_for('pages', page='sustainable') }}">Sustainability</a></li>
+                    <li><a href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+                    <li><a href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+                    <li><a href="{{ url_for('pages', page='branding') }}">Branding</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="section">
+                  <a class="nav-title" href="#"><h5>Team</h5></a>
+                  <ul id="team-list">
+                    <li><a href="{{ url_for('pages', page='team') }}">Overview</a></li>
+                    <li><a href="{{ url_for('pages', page='members') }}">Members</a></li>
+                    <li><a href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+                    <li><a href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+                    <li><a href="{{ url_for('pages', page='partnerships') }}">Partnerships</a></li>
+                  </ul>
+              </div>
+          </div>   
+      </div>
+      <div class="row pt-3 pb-3">
+          <div class="license centered col-md-12">
+              <p><small>© 2023 - Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+              <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2023/calgary">gitlab.igem.org/2023/calgary</a>.</small></p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjYCq+mqQJET5IyDmZqTNRSqf9rdHpf1CGoMv2WU7Y7r8Fp9kSd3b++bQH6Q7N6" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  function togglerCSS() {
+    var styleSheet = document.getElementById('css-file');
+    var currentStyle = styleSheet.getAttribute('href');
+    var darkModeStyle = "{{ url_for('static', filename='dark-mode.css') }}";
+    var lightModeStyle = "{{ url_for('static', filename='light-mode.css') }}";
+
+    if (currentStyle === darkModeStyle) {
+      styleSheet.setAttribute('href', lightModeStyle);
+    } else {
+      styleSheet.setAttribute('href', darkModeStyle);
+    }
+  }
+</script>
+
+<!--GSAP Start-->
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  var timeline = gsap.timeline();
+
+  // SECTION 2
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth >= 1000) {
+      timeline.to(".circle2", {
+        scrollTrigger: {
+          trigger: ".section-2",
+          start: "50px 100%",
+          end: "bottom 300px",
+          scrub: true,
+          markers: false,
+          toggleActions: "restart pause reverse pause"
+        },
+        x: 100,
+      });
+    }
+
+    timeline.fromTo(".text2", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".section-2",
+        start: "top 400px",
+        end: "bottom 60%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+  });
+    
+
+  // SECTION 3
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth >= 1000) {
+      timeline.to(".circle3", {
+        scrollTrigger: {
+          trigger: ".container3",
+          start: "50px 100%",
+          end: "bottom 300px",
+          scrub: true,
+          markers: false,
+          toggleActions: "restart pause reverse pause"
+        },
+        x: -100,
+      });
+    }
+
+    timeline.fromTo(".text3", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".section-3",
+        start: "top 400px",
+        end: "bottom 60%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+  });
+
+  // SECTION 4
+  timeline.fromTo(".text4", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".section-4",
+        start: "top 400px",
+        end: "bottom 70%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+
+    // SECTION 5
+    timeline.fromTo(".section5", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".title5",
+        start: "top 30%",
+        end: "bottom 20%",
+        scrub: true,
+        pin: true,
+        markers: false,
+        once: true,
+      }
+    });
+
+    // SECTION 6
+    timeline.fromTo(".text6-1", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".container6-1",
+        start: "top 400px",
+        end: "bottom 70%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+
+    timeline.fromTo(".text6-2", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".container6-2",
+        start: "top 400px",
+        end: "bottom 70%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+
+    // SECTION 7
+    timeline.fromTo(".text7", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".container7-1",
+        start: "top 400px",
+        end: "bottom 70%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+
+    // SECTION 8
+    timeline.fromTo(".text8", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".main-section8",
+        start: "top 400px",
+        end: "bottom 70%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+
+    timeline.fromTo(".circle8", {opacity: 0}, {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".learn-more",
+        start: "top 400px",
+        end: "bottom 70%",
+        scrub: true,
+        markers: false,
+        once: true,
+      }
+    });
+
+</script>

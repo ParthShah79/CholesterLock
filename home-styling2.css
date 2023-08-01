@@ -1,0 +1,449 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Quicksand-Regular';
+}
+
+
+.blackbg{
+  background: black;
+}
+
+section {
+  display: grid;
+  /* place-items: center;
+  align-content: center;  */
+  min-height: 100vh;
+}
+
+
+/* No scroll in x */
+body {
+  overflow-x: hidden;
+}
+
+
+/* -------- Section Formatting -------- */
+
+/*** SECTION 1 ***/
+.section-1 {
+  background-color: #07011B;
+  border-bottom: 3PX solid white;
+  place-items: center center;
+}
+
+.logo1 {
+  max-width: 90%;
+  width: 90vh;
+}
+
+
+/*** SECTION 2 ***/
+.section-2{
+  text-align: center;
+  vertical-align: middle;
+  background-color: #07011B;
+}
+
+.container2 {
+  display: grid; /* Use grid display */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-gap: 2rem; /* Gap between grid items */
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  margin: 5rem;
+}
+
+.fig-text2 {
+  text-align: center;
+  max-width: 100%;
+  min-width: 45%;
+}
+
+.figure2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the right */
+}
+
+.circle2 {
+  max-width: fit-content;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  border: 3PX solid white;
+  overflow: hidden;
+}
+
+.circle2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title2 {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.text2 {
+  font-family: 'Quicksand-Regular';
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+
+@media (max-width: 1000px) {
+  .container2 {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+
+  .circle2 {
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+}
+
+/*** SECTION 3 ***/
+.section-3 {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #07011B;
+}
+
+.stats-container {
+  background-color: black;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: fit-content;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 2rem;
+  display: flex;
+  padding: 1rem;
+}
+
+.container3 {
+  display: grid; /* Use grid display */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-gap: 2rem; /* Gap between grid items */
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  margin: 5rem;
+}
+
+.fig-text3 {
+  text-align: center;
+}
+
+.figure3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
+}
+
+.circle3 {
+  max-width: fit-content;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  border: 3PX solid white;
+  overflow: hidden;
+}
+
+.circle3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text3 {
+  font-family: 'Quicksand-Regular';
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .container3 {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+
+  .circle3 {
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+}
+
+/*** SECTION 4 ***/
+.section-4 {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #07011B;
+}
+
+.main-section4 {
+  height: fit-content;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 4.5rem;
+}
+
+.title4 {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.text4 {
+  font-family: 'Quicksand-Regular';
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.text-stat4 {
+  font-family: 'Quicksand-Regular';
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.container4 {
+  background-color: black;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: fit-content;
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  gap: 2rem;
+}
+
+.stats4 {
+  display: flex;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/*** SECTION 5 ***/
+
+.section-5{
+  text-align: center;
+  vertical-align: middle;
+  background-color: #07011B;
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+}
+
+.title5 {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.logo5 {
+  max-width: 90%;
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/*** SECTION 6 ***/
+
+.section-6 {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #07011B;
+}
+
+.container6-1 {
+  display: grid; /* Use grid display */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-gap: 2rem; /* Gap between grid items */
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  margin: 5rem;
+}
+
+.container6-2 {
+  display: grid; /* Use grid display */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-gap: 2rem; /* Gap between grid items */
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  margin: 5rem;
+}
+
+.fig-text6 {
+  text-align: center;
+}
+
+.figure6 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the right */
+}
+
+.circle6 {
+  max-width: fit-content;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  border: 3PX solid white;
+  overflow: hidden;
+}
+
+.title6 {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.text6-1 {
+  font-family: 'Quicksand-Regular';
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.text6-2 {
+  font-family: 'Quicksand-Regular';
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .container6-2 {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+
+  .circle6 {
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+}
+
+/*** SECTION 7 ***/
+
+.section-7 {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #07011B;
+}
+
+.container7-1 {
+  display: grid; /* Use grid display */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-gap: 2rem; /* Gap between grid items */
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  margin: 5rem;
+}
+
+.container7-2 {
+  background-color: black;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  height: 10rem;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.fig-text7 {
+  text-align: center;
+}
+
+.title7 {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+
+.text7 {
+  font-family: 'Quicksand-Regular';
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+
+
+/*** SECTION 8 ***/
+
+.section-8 {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #07011B;
+}
+
+.container8 {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 5rem;
+}
+
+.main-section8 {
+  height: fit-content;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 4.5rem;
+}
+
+.circle8 {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  line-height: 13rem;
+}
+
+.learn-more {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.title8-1 {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 3rem;
+  padding-bottom: 3rem;
+}
+
+.title8-2 {
+  font-family: 'Quicksand-Regular';
+  color: #f99c1c;
+  font-size: 3rem;
+  padding-bottom: 3rem;
+}
+
+.text8 {
+  font-family: 'Quicksand-Regular';
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
