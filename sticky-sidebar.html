@@ -80,18 +80,18 @@
                 padding-left: 5rem;
             }
 
-            #main-div {
+    #main-div {
                 width: 100%;
                 display: flex;
             }
 
-            .clearfix::after {
+        .clearfix::after {
                 content:"";
                 display: block;
                 clear: both;
             }
 
-                #progress{
+        #progress{
             height: 70px;
             width: 70px;
             background-color: white;
@@ -104,8 +104,8 @@
             place-items: center;
         }
 
-        #progress-value{
-            display: block;
+    #progress-value{
+         display: block;
             height: calc(100% - 15px);
             width: calc(100% - 15px);
             background-color: #ffffff;
@@ -115,14 +115,17 @@
             font-weight: 500;
         }
     
-            #sidebar {
-                min-height: 800px;
-                background-color: black;
-                color: #fbe395;
-                float: left;
-                text-align: center;
-                line-height: 800px;
-            }
+    #sidebar {
+        background-color: black;
+        color: #fbe395;
+        float: left;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        margin-top: 50%;
+        margin-bottom: 50%;
+    }
 
             #main-content {
                 min-height: 800px;
@@ -364,11 +367,12 @@
 
             <div id="main-div" class="clearfix">
                 <div id="sidebar">
-                    Sidebar
+                    <p>Link 1</p>
+                    <p>Link 2</p>
+                    <p> Link 3</p>
                 </div>
                 <div id="main-content">
-
-
+                    main-content
                 </div>
             </div>
         </div>
