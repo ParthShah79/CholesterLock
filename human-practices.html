@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
+        <!-- GSAP CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+        <!-- GSAP CDN END-->
+
+
         <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -76,6 +83,7 @@
             #main-div {
                 width: 100%;
                 display: flex;
+                position:
             }
 
             .clearfix::after {
@@ -108,14 +116,24 @@
             font-weight: 500;
         }
     
-            #sidebar {
-                min-height: 800px;
-                background-color: black;
-                color: #fbe395;
-                float: left;
-                text-align: center;
-                line-height: 800px;
+        #sidebar {
+            min-height: 800px;
+            background-color: black;
+            color: #fbe395;
+            float: left;
+            text-align: center;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            position: sticky; 
+            align-items: center;
+            padding-top: 1rem; /* Add some padding from the top of the screen */
             }
+
+        #sidebar a{
+            color: white;
+            text-decoration: none;
+        }
 
             #main-content {
                 min-height: 800px;
@@ -229,25 +247,70 @@
             <span id="progress-value"></span>
         </div>
 
-
-    <script>
-        let scrollPercentage = () => {
-            let scrollProgress = document.getElementById("progress");
-            let progressValue = document.getElementById("progress-value");
-            let pos = document.documentElement.scrollTop;
-            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrollValue = Math.round( pos * 100 / calcHeight);
-            
-            scrollProgress.style.background = `linear-gradient(to right, purple ${scrollValue}%, black ${scrollValue}%)`
-            progressValue.textContent = `${scrollValue}%`;
-        }
+        <button onclick="topFunction()" id="scrollToTop">Back to Top</button>
 
 
-        window.onscroll = scrollPercentage;
-        window.onload = scrollPercentage;
 
+        <script>
+            // Scroll Progress Bar
+            function updateScrollProgress() {
+              let scrollProgress = document.getElementById("progress");
+              let progressValue = document.getElementById("progress-value");
+              let pos = document.documentElement.scrollTop;
+              let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+              let scrollValue = Math.round(pos * 100 / calcHeight);
+          
+              scrollProgress.style.background = `linear-gradient(to right, purple ${scrollValue}%, black ${scrollValue}%)`
+              progressValue.textContent = `${scrollValue}%`;
+            }
+          
+            window.addEventListener('scroll', updateScrollProgress);
+            window.addEventListener('load', updateScrollProgress);
+          
+            // Scroll to Top Button
+            let scrollBtn = document.getElementById("scrollToTop");
+          
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.style.display = "block";
+              } else {
+                scrollBtn.style.display = "none";
+              }
+            }
+          
+            window.addEventListener('scroll', scrollFunction);
+          
+            function topFunction() {
+              document.body.scrollTop = 0; // For Safari
+              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+          
+            scrollBtn.addEventListener('click', topFunction);
+          </script>
 
-    </script>
+<style>
+    #scrollToTop {
+        position: fixed;
+        bottom: 20px;
+        left: 30px; 
+        z-index: 45;
+        border: solid white; 
+        background-color: black;
+        color: white; 
+        cursor: pointer; 
+        padding: 15px;
+        border-radius: 100px; 
+        font-size: 10px; 
+    }
+
+    #scrollToTop:hover{
+        color: black;
+        background-color: white;
+        opacity: 0.7;
+    }
+    
+</style>
+          
 
     
 
@@ -349,172 +412,228 @@
             </nav>
 
 
-
         <div id="wrapper-div">
         <!--CONTENT-->
-
-        <style>
-            * {
-  box-sizing: border-box;
-}
-
-/* Set a background color */
-body {
-  background-color: #474e5d;
-  font-family: Helvetica, sans-serif;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #FF9F55;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Place the container to the left */
-.left {
-  left: 0;
-}
-
-/* Place the container to the right */
-.right {
-  left: 50%;
-}
-
-/* Add arrows to the left container (pointing right) */
-.left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
-/* The actual content */
-.content {
-  padding: 20px 30px;
-  background-color: purple;
-  position: relative;
-  border-radius: 6px;
-}
-
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-/* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
-
-/* Full-width containers */
-  .container-h {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-/* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-/* Make sure all circles are at the same spot */
-  .left::after, .right::after {
-    left: 15px;
-  }
-
-/* Make all right containers behave like the left ones */
-  .right {
-    left: 0%;
-  }
-}
-        </style>
             <div id="header-banner-div">
                 Header/Banner
             </div>
 
+            <style>
+                #sidebar p {
+                    line-height: 40px;
+                    position: sticky;
+                }
+
+                .p-sys {
+                    position: fixed; /* Change position to fixed */
+                    color: white;
+              }
+             
+              .p-sys p:hover{
+                background: #07011B;
+                color: #F5DF8A;
+                scale: 1.5;
+              }
+
+            </style>
+
+
             <div id="main-div" class="clearfix">
                 <div id="sidebar">
-                    Sidebar
+                    <div class = "p-sys">
+                    <p class = "link"><a href = "#first-link"> Link 1 </a></p>
+                    <p class = "link"><a href = "#second-link"> Link 2 </a></p>
+                    <p class = "link"><a href = "#third-link"> Link 3 </a></p>
+
                 </div>
+            </div>
                 <div id="main-content">
-                    <div class="timeline">
-                        <div class="container-h left">
-                          <div class="content">
-                            <h2>2017</h2>
-                            <p>Lorem ipsum..</p>
-                          </div>
-                        </div>
-                        <div class="container-h right">
-                          <div class="content">
-                            <h2>2016</h2>
-                            <p>Lorem ipsum..</p>
-                          </div>
-                        </div>
-                      </div>
+                    <section id ="first-link"> 
+
+                            <div class="timeline-line">
+                                <div class="timeline-arrow start">&#8680;</div>
+                                <div class="timeline-arrow start1">&#8680;</div>
+                                <div class="timeline-arrow start2">&#8680;</div>
+                                <div class="timeline-arrow start3">&#8680;</div>
+                                <div class="timeline-arrow start4">&#8680;</div>
+                                <div class="timeline-arrow start5">&#8680;</div>
+                                <div class="timeline-arrow start6">&#8680;</div>
+                                <div class="timeline-arrow start7">&#8680;</div>
+                                <div class="timeline-arrow start8">&#8680;</div>
+                                <div class="timeline-arrow start9">&#8680;</div>
+                                <div class="timeline-arrow start10">&#8680;</div>
+                                <div class="timeline-arrow start11">&#8680;</div>
+                                <div class="timeline-arrow start12">&#8680;</div>
+                                <div class="timeline-arrow start13">&#8680;</div>
+                                <div class="timeline-arrow end">&#8680;</div>
+
+                            </div>
+
+                    </section>
+                    <section id ="second-link"> Section 2</section>
+                    <section id ="third-link"> Section 3</section>
+
+
                 </div>
             </div>
         </div>
+
+        <style>
+
+.timeline-line {
+    position: relative;
+    width: 80%;
+    height: 2px;
+    background-color: white;
+    margin-top: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-arrow {
+    position: absolute;
+    top: -10px;
+    font-size: 25px;
+    color: white;
+    rotate: 90deg;
+}
+
+.timeline-arrow.start {
+    left: 0rem;
+    top: -26rem;
+}
+
+.timeline-arrow.start1 {
+    left: 5rem;
+    top: -24rem;
+    rotate: 270deg;
+}
+.timeline-arrow.start2 {
+    left: 10rem;
+    top: -26rem;
+}
+.timeline-arrow.start3 {
+    left: 15rem;
+    top: -24rem;
+    rotate: 270deg;
+}
+.timeline-arrow.start4 {
+    left: 20rem;
+    top: -26rem;
+}
+
+.timeline-arrow.start5 {
+    left: 25rem;
+    top: -24rem;
+    rotate: 270deg;
+}
+
+.timeline-arrow.start6 {
+    left: 30rem;
+    top: -26rem;
+}
+
+.timeline-arrow.start7 {
+    left: 35rem;
+    top: -24rem;
+    rotate: 270deg;
+}
+
+.timeline-arrow.start8 {
+    left: 40rem;
+    top: -26rem;
+}
+
+.timeline-arrow.start9 {
+    left: 45rem;
+    top: -24rem;
+    rotate: 270deg;
+}
+
+.timeline-arrow.start10 {
+    left: 50rem;
+    top: -26rem;
+}
+
+.timeline-arrow.start11 {
+    left: 55rem;
+    top: -24rem;
+    rotate: 270deg;
+}
+
+.timeline-arrow.start12 {
+    left: 60rem;
+    top: -26rem;
+}
+
+.timeline-arrow.start13 {
+    left: 65rem;
+    top: -24rem;
+    rotate: 270deg;
+}
+
+.timeline-arrow.end {
+    right: 0;
+    top: -26rem;
+}
+
+
+        </style>
+
+        <script>
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const sidebar = document.getElementById("sidebar");
+  const headerBanner = document.getElementById("header-banner-div");
+  const linksContainer = document.querySelector(".p-sys");
+  const footer = document.getElementById("page-footer");
+
+  function updateLinkPosition() {
+    const headerHeight = headerBanner.clientHeight;
+    //CH returns the inner height of the element in px and it will remove the border, scrollbar, margin //
+  
+
+    const sidebarTopOffset = sidebar.offsetTop;
+    // OT will give the distance of the element relative to the top of the offsetParent
+
+
+    const sidebarBottom = sidebar.getBoundingClientRect().bottom;
+    const footerTop = footer.getBoundingClientRect().top;
+    //Distance from top to bottom of the sidebar in the entire document
+
+
+
+    const windowHeight = window.innerHeight;
+
+    if (window.scrollY >= sidebarTopOffset - headerHeight) {
+      linksContainer.classList.add("sticky-links");
+      linksContainer.style.top = `${headerHeight}px`;
+    } else {
+      linksContainer.classList.remove("sticky-links");
+      linksContainer.style.top = "0";
+    }
+
+    if (window.scrollY + windowHeight >= footerTop) {
+      linksContainer.style.position = "sticky";
+      linksContainer.style.bottom = "0";
+    } else {
+      linksContainer.style.position = "sticky";
+      linksContainer.style.bottom = "initial";
+    }
+  }
+
+  window.addEventListener("scroll", updateLinkPosition);
+  window.addEventListener("resize", updateLinkPosition);
+
+  // Initially call the function to set the initial state
+  updateLinkPosition();
+});
+
+        </script>
+          
+
+
 
         <!--FOOTER-->
             <div id="page-footer">
@@ -645,8 +764,6 @@ body {
             <script src="app.js"></script>
             <script type ="text/javascript">
             
-
-
             </script>
 
 
