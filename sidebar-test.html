@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- GSAP CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <!-- GSAP CDN END-->
+
+        <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		<title>CholesterLock</title>
+
+        <style type="text/css">
+          
+            * {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+                font-family: Calibri;
+            }
+
+            body {
+                background-color: #2f1691;
+            }
+
+            /* TOP NAV BAR */
+            .left-aligned { 
+                margin-left: auto; 
+            }
+            
+            .top-nav{
+                border-bottom: 3PX solid black;
+                background-color: #07011B;
+                padding: auto;
+            }
+
+            .nav-logo {
+                height: 3rem;
+            }
+
+            .navbar-nav .nav-link {
+                color: #FDF8BE; 
+            }
+
+            .navbar-nav .nav-link:hover {
+                color: #D62923;
+            }
+
+            .dropdown-menu {
+                background-color: black;
+            }
+
+            .dropdown-menu a:hover {
+                background-color: #FDF8BE;
+            }
+
+            .dropdown-menu .dropdown-item {
+                color: white;
+            }
+
+            .dropdown-menu .dropdown-item:hover {
+                color: #07011B;
+            }
+
+            /* CONTENT */
+
+            #header-banner-div {
+                width: 100;
+                height: 70vh;
+                background-color: #07011B;
+                border-bottom: 3PX solid black;
+                color: #fbe395;
+                font-size: 2rem;
+                line-height: 70vh;
+                margin-top: 5rem;
+                padding-top: 10rem;
+                padding-left: 5rem;
+            }
+
+            #main-div {
+                width: 100%;
+                display: flex;
+            }
+
+            .clearfix::after {
+                content:"";
+                display: block;
+                clear: both;
+            }
+
+            /* Progress Wheel */
+            #progress{
+                height: 70px;
+                width: 70px;
+                background-color: white;
+                border-radius: 50%;
+                position: fixed;
+                bottom: 20px;
+                right: 10px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                display: grid;
+                place-items: center;
+            }
+
+            #progress-value{
+                display: block;
+                height: calc(100% - 15px);
+                width: calc(100% - 15px);
+                background-color: #ffffff;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                font-weight: 500;
+            }
+
+            /* Side Bar */
+        
+            #sidebar {
+                min-height: 800px;
+                background-color: black;
+                color: #fbe395;
+                float: left;
+                text-align: center;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                position: sticky; 
+                align-items: center;
+                padding-top: 1rem; /* Add some padding from the top of the screen */
+            }
+
+            #sidebar a{
+                color: white;
+                text-decoration: none;
+            }
+
+            #main-content {
+                min-height: 800px;
+                background-color: #07011B;
+                color: #fbe395;
+                float: right;
+                text-align: center;
+                line-height: 800px;
+            }
+
+            @media (max-width: 768px) {
+                #sidebar {
+                    display: none;
+                }
+
+                #main-content {
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+
+            @media (min-width: 768px) {
+                #sidebar {
+                    display: block;
+                    width: 17rem;
+                }
+
+                #main-content {
+                    flex: 1;
+                }
+            }
+
+            section {
+                height: 100vh;
+            }
+
+            
+            /* FOOTER */
+            #page-footer {
+                padding: 2%;
+                /* background-image: url("img/footer-design.svg"); */
+                background-color: #07011B;
+                border-top: 3PX solid black;
+                color: #fbe395;
+            }
+
+            .footer-logo{
+                width: 10rem;
+                padding-bottom: 2vh;
+            }
+
+            .social-media{
+                width:1.5rem;
+                padding: 0.1rem;
+            }
+
+            .fb{
+                width: 1.2rem;
+            }
+
+            .socials{
+                margin-top: 1rem;
+                padding-left: 0.7rem;
+            }
+
+            .nav-title{
+                line-height: 10vh;
+                text-decoration: none;
+                color: #fbe395;
+                padding-bottom: 2%;
+            }
+
+            .nav-title:hover {
+                line-height: 10vh;
+                text-decoration: none;
+                color: #D62923;
+                padding-bottom: 2%;
+            }
+
+            #footer ul a{
+                color: white; 
+                text-decoration: none;
+                font-weight: 100;
+                padding: 0 0rem;
+                text-align: left;
+            }
+
+            #footer ul a:hover{
+                text-decoration: underline;
+                color: #FDF8BE;
+            }
+
+            #footer h3{
+                color: #fbe395; 
+                text-decoration: none;
+                padding: 0 0rem;
+                text-align: left;
+                font-size: large;
+            }
+
+            #footer .section {
+                padding-top: 2vh;
+            }
+
+            .license {
+                text-align: center;
+            }
+        
+        </style>
+    </head>
+   
+    <body>
+        <div id="progress">
+            <span id="progress-value"></span>
+        </div>
+
+        <button onclick="topFunction()" id="scrollToTop">Back to Top</button>
+
+        <script>
+            // Scroll Progress Bar
+            function updateScrollProgress() {
+              let scrollProgress = document.getElementById("progress");
+              let progressValue = document.getElementById("progress-value");
+              let pos = document.documentElement.scrollTop;
+              let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+              let scrollValue = Math.round(pos * 100 / calcHeight);
+          
+              scrollProgress.style.background = `linear-gradient(to right, purple ${scrollValue}%, black ${scrollValue}%)`
+              progressValue.textContent = `${scrollValue}%`;
+            }
+          
+            window.addEventListener('scroll', updateScrollProgress);
+            window.addEventListener('load', updateScrollProgress);
+          
+            // Scroll to Top Button
+            let scrollBtn = document.getElementById("scrollToTop");
+          
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollBtn.style.display = "block";
+                } else {
+                    scrollBtn.style.display = "none";
+                }
+            }
+          
+            window.addEventListener('scroll', scrollFunction);
+          
+            function topFunction() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+          
+            scrollBtn.addEventListener('click', topFunction);
+        </script>
+
+        <style>
+            #scrollToTop {
+                position: fixed;
+                bottom: 20px;
+                left: 30px; 
+                z-index: 45;
+                border: solid white; 
+                background-color: black;
+                color: white; 
+                cursor: pointer; 
+                padding: 15px;
+                border-radius: 100px; 
+                font-size: 10px; 
+            }
+
+            #scrollToTop:hover{
+                color: black;
+                background-color: white;
+                opacity: 0.7;
+            }
+            
+        </style>
+        
+
+        <!--TOP NAVBAR-->
+            <nav class="top-nav navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+                <div class="container d-flex align-items-center">
+                
+                    <!---- TEAM NAME ---->
+                    <div class="logo-nav">
+                        <a class="navbar-brand" href="index.html">
+                            <img class="nav-logo" src="images/logo.png" alt="Logo"/>
+                        </a>
+                    </div>
+                
+                    <!---- SMALL SCREEN MENU ICON ---->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+                    <div class="collapse navbar-collapse" id="navmenu">
+                        <ul class="navbar-nav ml-auto left-aligned">
+                
+                        <!---- HOME ---->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                
+                        <!---- PROJECT ---->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Project
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="description.html">Description</a></li>
+                            <li><a class="dropdown-item" href="implementation.html">Implementation</a></li>
+                            <li><a class="dropdown-item" href="contribution.html">Contribution</a></li>
+                            <li><a class="dropdown-item" href="judging.html">Judging</a></li>
+                            </ul>
+                        </li>
+                
+                        <!---- WET LAB ---->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Wet Lab
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="wetlab.html">Overview</a></li>
+                            <li><a class="dropdown-item" href="design.html">Design</a></li>
+                            <li><a class="dropdown-item" href="engineering.html">Engineering</a></li>
+                            <li><a class="dropdown-item" href="experiments.html">Experiments</a></li>
+                            <li><a class="dropdown-item" href="results.html">Results</a></li>
+                            <li><a class="dropdown-item" href="proof-of-concept.html">Proof of Concept</a></li>
+                            <li><a class="dropdown-item" href="parts.html">Parts</a></li>
+                            <li><a class="dropdown-item" href="safety.html">Safety</a></li>
+                            </ul>
+                        </li>
+                
+                        <!---- DRY LAB ---->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dry Lab
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="drylab.html">Overview</a></li>
+                            <li><a class="dropdown-item" href="model.html">Model</a></li>
+                            <li><a class="dropdown-item" href="software.html">Software</a></li>
+                            </ul>
+                        </li>
+
+                        <!---- HUMAN PRACTICES ---->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Human Practices
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="humanpractices.html">Overview</a></li>
+                            <li><a class="dropdown-item" href="integrated-human-practices.html">Integrated Human Practices</a></li>
+                            <li><a class="dropdown-item" href="educational-outreach.html">Educational Outreach</a></li>
+                            </ul>
+                        </li>
+
+                        <!---- TEAM ---->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Team
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="team.html">Overview</a></li>
+                            <li><a class="dropdown-item" href="members.html">Members</a></li>
+                            <li><a class="dropdown-item" href="attributions.html">Attributions</a></li>
+                            <li><a class="dropdown-item" href="collaborations.html">Collaborations</a></li>
+                            <li><a class="dropdown-item" href="partnerships.html">Partnerships</a></li>
+                            </ul>
+                        </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+        <div id="wrapper-div">
+        <!--CONTENT-->
+            <div id="header-banner-div">
+                Header/Banner
+            </div>
+
+            <style>
+                #sidebar p {
+                    line-height: 40px;
+                    position: sticky;
+                }
+
+                .p-sys {
+                    position: fixed; /* Change position to fixed */
+                    color: white;
+                }
+             
+                .p-sys p:hover{
+                    position: fixed;
+                    background: #07011B;
+                    color: #F5DF8A;
+                    scale: 1.2;
+                }
+            </style>
+
+            <div id="main-div" class="clearfix">
+                <div id="sidebar">
+                    <div class = "p-sys">
+                        <p class = "link"><a href = "#first-link"> Link 1 </a></p>
+                        <p class = "link"><a href = "#second-link"> Link 2 </a></p>
+                        <p class = "link"><a href = "#third-link"> Link 3 </a></p>
+                    </div>
+                </div>
+                <div id="main-content">
+                    <section id ="first-link"> Section 1</section>
+                    <section id ="second-link"> Section 2</section>
+                    <section id ="third-link"> Section 3</section>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebar = document.getElementById("sidebar");
+            const headerBanner = document.getElementById("header-banner-div");
+            const linksContainer = document.querySelector(".p-sys");
+            const footer = document.getElementById("page-footer");
+
+            function updateLinkPosition() {
+                const headerHeight = headerBanner.clientHeight;
+                //CH returns the inner height of the element in px and it will remove the border, scrollbar, margin //
+            
+                const sidebarTopOffset = sidebar.offsetTop;
+                // OT will give the distance of the element relative to the top of the offsetParent
+
+                const sidebarBottom = sidebar.getBoundingClientRect().bottom;
+                const footerTop = footer.getBoundingClientRect().top;
+                //Distance from top to bottom of the sidebar in the entire document
+
+                const windowHeight = window.innerHeight;
+
+                if (window.scrollY >= sidebarTopOffset - headerHeight) {
+                    linksContainer.classList.add("sticky-links");
+                    linksContainer.style.top = `${-300 + headerHeight}px`; 
+                    // Note: -300 can be adjust to change location of links in sidebar
+                } else {
+                    linksContainer.classList.remove("sticky-links");
+                    linksContainer.style.top = "0";
+                }
+
+                if (window.scrollY + windowHeight >= footerTop) {
+                    linksContainer.style.position = "sticky";
+                    linksContainer.style.bottom = "0";
+                } else {
+                    linksContainer.style.position = "sticky";
+                    linksContainer.style.bottom = "initial";
+                }
+            }
+
+            window.addEventListener("scroll", updateLinkPosition);
+            window.addEventListener("resize", updateLinkPosition);
+
+            // Initially call the function to set the initial state
+            updateLinkPosition();
+        });
+
+        </script>
+          
+
+
+
+        <!--FOOTER-->
+            <div id="page-footer">
+                <div id="footer">
+                    <div class="row pt-3">
+                        <div class="col-md-2">
+                            <div class="logo-nav">
+                                <a href="index.html">
+                                    <img class="footer-logo" src="images/logo.png" alt="Logo"/>
+                                </a>
+                            </div>
+                            <div class="contact-nav pb-4">
+                                <h3>Follow Us</h3>
+                                <div class="socials pb-2">
+                                    <a href="https://www.facebook.com/igemcalgary/"><img src="images/Facebook Vector.svg"  class="social-media fb" alt="Facebook"></a>
+                                    <a href="https://twitter.com/igemcalgary/"><img src="images/Twitter Vector.svg"  class="social-media" alt="Twitter"></a>
+                                    <a href="https://www.instagram.com/igemcalgary/"><img src="images/Instagram Vector.svg"  class="social-media" alt="Instagram"></a>
+                                    <a href="https://www.linkedin.com/company/igem-calgary/"><img src="images/LinkedIn Vector.svg"  class="social-media" alt="LinkedIn"></a>
+                                    <a href="https://www.youtube.com/user/igemcalgary"><img src="images/Youtube Vector.svg"  class="social-media" alt="Youtube"></a>
+                                </div>
+                                <h3 class="pt-2">Contact Us</h3>
+                                <a href="mailto: igemcalgary@ucalgary.ca">igemcalgary@ucalgary.ca</a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="section">
+                                <a class="nav-title" href="project.html"><h5>Project</h5></a>
+                                <ul id="project-list">
+                                    <li>
+                                        <a href="description.html">Description</a>
+                                    </li>
+                                    <li>
+                                        <a href="implementation.html">Implementation</a>
+                                    </li>
+                                    <li>
+                                        <a href="contribution.html">Contribution</a>
+                                    </li>
+                                    <li>
+                                        <a href="judging.html">Judging</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="section">
+                                <a class="nav-title" href="wetlab.html"><h5>Wet Lab</h5></a>
+                                <ul id="wetlab-list">
+                                    <li>
+                                        <a href="design.html">Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="engineering.html">Engineering</a>
+                                    </li>
+                                    <li>
+                                        <a href="experiments.html">Experiments</a>
+                                    </li>
+                                    <li>
+                                        <a href="results.html">Results</a>
+                                    </li>
+                                    <li>
+                                        <a href="proofofconcept.html">Proof of Concept</a>
+                                    </li>
+                                    <li>
+                                        <a href="parts.html">Parts</a>
+                                    </li>
+                                    <li>
+                                        <a href="safety.html">Safety</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="section">
+                                <a class="nav-title" href="drylab.html"><h5>Dry Lab</h5></a>
+                                <ul id="drylab-list">
+                                    <li>
+                                        <a href="model.html">Model</a>
+                                    </li>
+                                    <li>
+                                        <a href="software.html">Software</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="section">
+                                <a class="nav-title" href="humanpractices.html"><h5>Human Practices</h5></a>
+                                <ul id="humanpractices-list">
+                                    <li>
+                                        <a href="integratedhumanpractices.html">Integrated Human Practices</a>
+                                    </li>
+                                    <li>
+                                        <a href="educationaloutreach.html">Educational Outreach</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="section">
+                                <a class="nav-title" href="team.html"><h5>Team</h5></a>
+                                <ul id="team-list">
+                                    <li>
+                                        <a href="members.html">Members</a>
+                                    </li>
+                                    <li>
+                                        <a href="attributions.html">Attributions</a>
+                                    </li>
+                                    <li>
+                                        <a href="collaborations.html">Collaborations</a>
+                                    </li>
+                                    <li>
+                                        <a href="partnerships.html">Partnerships</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="row pt-3 pb-3">
+                        <div class="license centered col-md-12">
+                            <p><small>© 2023 - Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+                            <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2023/calgary">gitlab.igem.org/2023/calgary</a>.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+           
+            <script src="app.js"></script>
+
+        </body>
+    </html>
