@@ -78,6 +78,7 @@
                 margin-top: 5rem;
                 padding-top: 10rem;
                 padding-left: 5rem;
+                overflow-y: hidden;
             }
 
             #main-div {
@@ -92,7 +93,7 @@
                 clear: both;
             }
 
-                #progress{
+            #progress{
             height: 70px;
             width: 70px;
             background-color: white;
@@ -238,6 +239,12 @@
             .license {
                 text-align: center;
             }
+
+
+            html{
+                overflow-x: hidden;
+            }
+
         
         </style>
     </head>
@@ -289,6 +296,7 @@
           </script>
 
 <style>
+
     #scrollToTop {
         position: fixed;
         bottom: 20px;
@@ -451,8 +459,18 @@
                     <section id ="first-link"> 
 
                             <div class="timeline-line">
-                                <div class="timeline-arrow start">&#8680;</div>
-                                <div class="timeline-arrow start1">&#8680;</div>
+                                <button class="tl-box1 tl-black"><a href = "#second-link">asd</a></button>
+                                <button class="tl-box2 tl-black"></button>
+                                <button class="tl-box3 tl-black"></button>
+                                <button class="tl-box4 tl-black"></button>
+                                <button class="tl-box5 tl-black"></button>
+                                <button class="tl-box6 tl-black"></button>
+                                <button class="tl-box7 tl-black"></button>
+                                <button class="tl-box8 tl-black"></button>
+                                <button class="tl-box9 tl-black"></button>
+                                <button class="tl-box10 tl-black"></button>
+
+                                <div class="timeline-arrow start1">&#8680; </div>
                                 <div class="timeline-arrow start2">&#8680;</div>
                                 <div class="timeline-arrow start3">&#8680;</div>
                                 <div class="timeline-arrow start4">&#8680;</div>
@@ -462,17 +480,13 @@
                                 <div class="timeline-arrow start8">&#8680;</div>
                                 <div class="timeline-arrow start9">&#8680;</div>
                                 <div class="timeline-arrow start10">&#8680;</div>
-                                <div class="timeline-arrow start11">&#8680;</div>
-                                <div class="timeline-arrow start12">&#8680;</div>
-                                <div class="timeline-arrow start13">&#8680;</div>
-                                <div class="timeline-arrow end">&#8680;</div>
 
                             </div>
 
                     </section>
+
                     <section id ="second-link"> Section 2</section>
                     <section id ="third-link"> Section 3</section>
-
 
                 </div>
             </div>
@@ -480,10 +494,14 @@
 
         <style>
 
+.tl-black{
+    color: black;
+}
+
 .timeline-line {
     position: relative;
-    width: 80%;
-    height: 2px;
+    width: 2px;
+    height: 1250px;
     background-color: white;
     margin-top: 20rem;
     margin-left: auto;
@@ -492,96 +510,174 @@
 
 .timeline-arrow {
     position: absolute;
-    top: -10px;
+    top: -25rem;
     font-size: 25px;
     color: white;
-    rotate: 90deg;
+    rotate: 900deg;
 }
 
-.timeline-arrow.start {
-    left: 0rem;
-    top: -26rem;
+.start1 {
+    left: 1rem;
+    top: -20rem;
+    rotate: 180deg;
 }
 
-.timeline-arrow.start1 {
+.start2 {
+    left: -2rem;
+    top: -12.5rem;
+    rotate: 360deg;
+}
+
+.start3 {
+    left: 1rem;
+    top: -5rem;
+    rotate: 180deg;
+}
+
+.start4 {
+    left: -2rem;
+    top: 2.5rem;
+    rotate: 360deg;
+}
+
+.start5 {
+    left: 1rem;
+    top: 10rem;
+    rotate: 180deg;
+}
+
+.start6 {
+    left: -2rem;
+    top: 17.5rem;
+    rotate: 360deg;
+}
+
+.start7 {
+    left: 1rem;
+    top: 25rem;
+    rotate: 180deg;
+}
+
+.start8 {
+    left: -2rem;
+    top: 32.5rem;
+    rotate: 360deg;
+}
+
+.start9 {
+    left: 1rem;
+    top: 40rem;
+    rotate: 180deg;
+}
+
+.start10 {
+    left: -2rem;
+    top: 47.5rem;
+    rotate: 360deg;
+}
+
+.tl-box1{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 10rem;
+    left: -20rem;
+}
+
+.tl-box2{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 25rem;
+    left: -20rem;
+}
+
+.tl-box3{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 40rem;
+    left: -20rem;
+}
+
+.tl-box4{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 55rem;
+    left: -20rem;
+}
+
+.tl-box5{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 70rem;
+    left: -20rem;
+}
+
+.tl-box6{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 2rem;
     left: 5rem;
-    top: -24rem;
-    rotate: 270deg;
-}
-.timeline-arrow.start2 {
-    left: 10rem;
-    top: -26rem;
-}
-.timeline-arrow.start3 {
-    left: 15rem;
-    top: -24rem;
-    rotate: 270deg;
-}
-.timeline-arrow.start4 {
-    left: 20rem;
-    top: -26rem;
 }
 
-.timeline-arrow.start5 {
-    left: 25rem;
-    top: -24rem;
-    rotate: 270deg;
+.tl-box7{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 17rem;
+    left: 5rem;
 }
 
-.timeline-arrow.start6 {
-    left: 30rem;
-    top: -26rem;
+.tl-box8{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 32rem;
+    left: 5rem;
 }
 
-.timeline-arrow.start7 {
-    left: 35rem;
-    top: -24rem;
-    rotate: 270deg;
+.tl-box9{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 47rem;
+    left: 5rem;
 }
 
-.timeline-arrow.start8 {
-    left: 40rem;
-    top: -26rem;
+.tl-box10{
+    position: absolute;
+    border-radius: 50px;
+    height: 5rem;
+    width: 15rem;
+    background-color: white;
+    top: 62rem;
+    left: 5rem;
 }
-
-.timeline-arrow.start9 {
-    left: 45rem;
-    top: -24rem;
-    rotate: 270deg;
-}
-
-.timeline-arrow.start10 {
-    left: 50rem;
-    top: -26rem;
-}
-
-.timeline-arrow.start11 {
-    left: 55rem;
-    top: -24rem;
-    rotate: 270deg;
-}
-
-.timeline-arrow.start12 {
-    left: 60rem;
-    top: -26rem;
-}
-
-.timeline-arrow.start13 {
-    left: 65rem;
-    top: -24rem;
-    rotate: 270deg;
-}
-
-.timeline-arrow.end {
-    right: 0;
-    top: -26rem;
-}
-
 
         </style>
-
         <script>
-
 
 document.addEventListener("DOMContentLoaded", function() {
   const sidebar = document.getElementById("sidebar");
